@@ -1,0 +1,3 @@
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles/server.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles/edit_cache.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles/rebuild_cache.dir
