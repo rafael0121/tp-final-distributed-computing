@@ -130,17 +130,17 @@ lamport/fast:
 .PHONY : lamport/fast
 
 #=============================================================================
-# Target rules for targets named protocols
+# Target rules for targets named ringElection
 
 # Build rule for target.
-protocols: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocols
-.PHONY : protocols
+ringElection: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ringElection
+.PHONY : ringElection
 
 # fast build rule for target.
-protocols/fast:
-	$(MAKE) $(MAKESILENT) -f common/protocols/CMakeFiles/protocols.dir/build.make common/protocols/CMakeFiles/protocols.dir/build
-.PHONY : protocols/fast
+ringElection/fast:
+	$(MAKE) $(MAKESILENT) -f common/protocols/CMakeFiles/ringElection.dir/build.make common/protocols/CMakeFiles/ringElection.dir/build
+.PHONY : ringElection/fast
 
 #=============================================================================
 # Target rules for targets named compressor
@@ -178,7 +178,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... compressor"
 	@echo "... lamport"
-	@echo "... protocols"
+	@echo "... ringElection"
 	@echo "... sensor"
 .PHONY : help
 

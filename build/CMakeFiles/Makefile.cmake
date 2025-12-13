@@ -94,7 +94,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "common/lamport/CMakeFiles/lamport.dir/DependInfo.cmake"
-  "common/protocols/CMakeFiles/protocols.dir/DependInfo.cmake"
+  "common/protocols/CMakeFiles/ringElection.dir/DependInfo.cmake"
   "compressor/CMakeFiles/compressor.dir/DependInfo.cmake"
   "sensor/CMakeFiles/sensor.dir/DependInfo.cmake"
   )

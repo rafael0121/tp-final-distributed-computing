@@ -243,15 +243,6 @@ c-ares_DIR:PATH=/usr/lib/cmake/c-ares
 //The directory containing a CMake configuration file for gRPC.
 gRPC_DIR:PATH=/usr/lib/cmake/grpc
 
-//Value Computed by CMake
-lamport_BINARY_DIR:STATIC=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/lamport
-
-//Value Computed by CMake
-lamport_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-lamport_SOURCE_DIR:STATIC=/home/rafael/MEGA/Projects/tp-final-distributed-computing/common/lamport
-
 //Path to a library.
 pkgcfg_lib_RE2_absl_base:FILEPATH=/usr/lib/libabsl_base.so
 

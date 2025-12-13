@@ -8,13 +8,13 @@ service RingNode {
 
 message ElectionMsg {
   int32 origin_id = 1;
-  double best_energy = 2; // highest energy seen so far
-  int32 best_id = 3;      // id of node with best_energy
+  int32 best_energy = 2;
+  int32 best_id = 3;
 }
 
 message CoordinatorMsg {
   int32 leader_id = 1;
-  double leader_energy = 2;
+  int32 leader_energy = 2;
 }
 
 message Ack { bool ok = 1; }

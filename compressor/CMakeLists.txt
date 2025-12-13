@@ -8,6 +8,7 @@ find_package(Threads)
 #
 set(SOURCES
     main.cpp
+    rpc_election.cpp
 )
 
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCES})
@@ -16,5 +17,5 @@ source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCES})
 # Target
 #
 add_executable(compressor ${SOURCES})
-target_link_libraries(compressor PRIVATE protocols)
+target_link_libraries(compressor PRIVATE ringElection)
 target_link_libraries(compressor PRIVATE lamport)

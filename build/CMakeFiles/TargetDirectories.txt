@@ -3,7 +3,7 @@
 /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/lamport/CMakeFiles/lamport.dir
 /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/lamport/CMakeFiles/edit_cache.dir
 /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/lamport/CMakeFiles/rebuild_cache.dir
-/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/protocols/CMakeFiles/protocols.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/protocols/CMakeFiles/ringElection.dir
 /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/protocols/CMakeFiles/edit_cache.dir
 /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/protocols/CMakeFiles/rebuild_cache.dir
 /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/compressor/CMakeFiles/compressor.dir
