@@ -1,3 +1,14 @@
-/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles/server.dir
 /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles/edit_cache.dir
 /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles/rebuild_cache.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/lamport/CMakeFiles/lamport.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/lamport/CMakeFiles/edit_cache.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/lamport/CMakeFiles/rebuild_cache.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/protocols/CMakeFiles/protocols.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/protocols/CMakeFiles/edit_cache.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/protocols/CMakeFiles/rebuild_cache.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/compressor/CMakeFiles/compressor.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/compressor/CMakeFiles/edit_cache.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/compressor/CMakeFiles/rebuild_cache.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/sensor/CMakeFiles/sensor.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/sensor/CMakeFiles/edit_cache.dir
+/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/sensor/CMakeFiles/rebuild_cache.dir

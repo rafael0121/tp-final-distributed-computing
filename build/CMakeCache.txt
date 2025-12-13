@@ -127,6 +127,21 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=tp-final-distributed-computing
 
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
+
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
 
@@ -192,6 +207,264 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Path to a library.
+OPENSSL_CRYPTO_LIBRARY:FILEPATH=/usr/lib/libcrypto.so
+
+//Path to a file.
+OPENSSL_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+OPENSSL_SSL_LIBRARY:FILEPATH=/usr/lib/libssl.so
+
+//Arguments to supply to pkg-config
+PKG_CONFIG_ARGN:STRING=
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
+
+//The directory containing a CMake configuration file for Protobuf.
+Protobuf_DIR:PATH=/usr/lib/cmake/protobuf
+
+//Path to a file.
+ZLIB_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/libz.so
+
+//The directory containing a CMake configuration file for absl.
+absl_DIR:PATH=/usr/lib/cmake/absl
+
+//The directory containing a CMake configuration file for c-ares.
+c-ares_DIR:PATH=/usr/lib/cmake/c-ares
+
+//The directory containing a CMake configuration file for gRPC.
+gRPC_DIR:PATH=/usr/lib/cmake/grpc
+
+//Value Computed by CMake
+lamport_BINARY_DIR:STATIC=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/common/lamport
+
+//Value Computed by CMake
+lamport_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+lamport_SOURCE_DIR:STATIC=/home/rafael/MEGA/Projects/tp-final-distributed-computing/common/lamport
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_base:FILEPATH=/usr/lib/libabsl_base.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_city:FILEPATH=/usr/lib/libabsl_city.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_civil_time:FILEPATH=/usr/lib/libabsl_civil_time.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_cord:FILEPATH=/usr/lib/libabsl_cord.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_cord_internal:FILEPATH=/usr/lib/libabsl_cord_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_cordz_functions:FILEPATH=/usr/lib/libabsl_cordz_functions.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_cordz_handle:FILEPATH=/usr/lib/libabsl_cordz_handle.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_cordz_info:FILEPATH=/usr/lib/libabsl_cordz_info.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_crc32c:FILEPATH=/usr/lib/libabsl_crc32c.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_crc_cord_state:FILEPATH=/usr/lib/libabsl_crc_cord_state.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_crc_cpu_detect:FILEPATH=/usr/lib/libabsl_crc_cpu_detect.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_crc_internal:FILEPATH=/usr/lib/libabsl_crc_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_debugging_internal:FILEPATH=/usr/lib/libabsl_debugging_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_decode_rust_punycode:FILEPATH=/usr/lib/libabsl_decode_rust_punycode.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_demangle_internal:FILEPATH=/usr/lib/libabsl_demangle_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_demangle_rust:FILEPATH=/usr/lib/libabsl_demangle_rust.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_examine_stack:FILEPATH=/usr/lib/libabsl_examine_stack.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_exponential_biased:FILEPATH=/usr/lib/libabsl_exponential_biased.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_flags_commandlineflag:FILEPATH=/usr/lib/libabsl_flags_commandlineflag.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_flags_commandlineflag_internal:FILEPATH=/usr/lib/libabsl_flags_commandlineflag_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_flags_config:FILEPATH=/usr/lib/libabsl_flags_config.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_flags_internal:FILEPATH=/usr/lib/libabsl_flags_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_flags_marshalling:FILEPATH=/usr/lib/libabsl_flags_marshalling.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_flags_private_handle_accessor:FILEPATH=/usr/lib/libabsl_flags_private_handle_accessor.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_flags_program_name:FILEPATH=/usr/lib/libabsl_flags_program_name.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_flags_reflection:FILEPATH=/usr/lib/libabsl_flags_reflection.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_graphcycles_internal:FILEPATH=/usr/lib/libabsl_graphcycles_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_hash:FILEPATH=/usr/lib/libabsl_hash.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_hashtablez_sampler:FILEPATH=/usr/lib/libabsl_hashtablez_sampler.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_int128:FILEPATH=/usr/lib/libabsl_int128.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_kernel_timeout_internal:FILEPATH=/usr/lib/libabsl_kernel_timeout_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_leak_check:FILEPATH=/usr/lib/libabsl_leak_check.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_entry:FILEPATH=/usr/lib/libabsl_log_entry.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_globals:FILEPATH=/usr/lib/libabsl_log_globals.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_internal_check_op:FILEPATH=/usr/lib/libabsl_log_internal_check_op.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_internal_conditions:FILEPATH=/usr/lib/libabsl_log_internal_conditions.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_internal_fnmatch:FILEPATH=/usr/lib/libabsl_log_internal_fnmatch.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_internal_format:FILEPATH=/usr/lib/libabsl_log_internal_format.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_internal_globals:FILEPATH=/usr/lib/libabsl_log_internal_globals.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_internal_log_sink_set:FILEPATH=/usr/lib/libabsl_log_internal_log_sink_set.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_internal_message:FILEPATH=/usr/lib/libabsl_log_internal_message.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_internal_nullguard:FILEPATH=/usr/lib/libabsl_log_internal_nullguard.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_internal_proto:FILEPATH=/usr/lib/libabsl_log_internal_proto.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_internal_structured_proto:FILEPATH=/usr/lib/libabsl_log_internal_structured_proto.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_severity:FILEPATH=/usr/lib/libabsl_log_severity.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_log_sink:FILEPATH=/usr/lib/libabsl_log_sink.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_malloc_internal:FILEPATH=/usr/lib/libabsl_malloc_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_raw_hash_set:FILEPATH=/usr/lib/libabsl_raw_hash_set.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_raw_logging_internal:FILEPATH=/usr/lib/libabsl_raw_logging_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_spinlock_wait:FILEPATH=/usr/lib/libabsl_spinlock_wait.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_stacktrace:FILEPATH=/usr/lib/libabsl_stacktrace.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_str_format_internal:FILEPATH=/usr/lib/libabsl_str_format_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_strerror:FILEPATH=/usr/lib/libabsl_strerror.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_string_view:FILEPATH=/usr/lib/libabsl_string_view.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_strings:FILEPATH=/usr/lib/libabsl_strings.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_strings_internal:FILEPATH=/usr/lib/libabsl_strings_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_symbolize:FILEPATH=/usr/lib/libabsl_symbolize.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_synchronization:FILEPATH=/usr/lib/libabsl_synchronization.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_throw_delegate:FILEPATH=/usr/lib/libabsl_throw_delegate.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_time:FILEPATH=/usr/lib/libabsl_time.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_time_zone:FILEPATH=/usr/lib/libabsl_time_zone.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_tracing_internal:FILEPATH=/usr/lib/libabsl_tracing_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_utf8_for_code_point:FILEPATH=/usr/lib/libabsl_utf8_for_code_point.so
+
+//Path to a library.
+pkgcfg_lib_RE2_absl_vlog_config_internal:FILEPATH=/usr/lib/libabsl_vlog_config_internal.so
+
+//Path to a library.
+pkgcfg_lib_RE2_re2:FILEPATH=/usr/lib/libre2.so
+
+//Path to a library.
+pkgcfg_lib_RE2_rt:FILEPATH=/usr/lib/librt.a
+
+//Path to a library.
+pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib/libcrypto.so
+
+//Path to a library.
+pkgcfg_lib__OPENSSL_ssl:FILEPATH=/usr/lib/libssl.so
+
+//CMake built-in FindProtobuf.cmake module compatible
+protobuf_MODULE_COMPATIBLE:BOOL=OFF
+
+//Enable for verbose output
+protobuf_VERBOSE:BOOL=OFF
+
+//The directory containing a CMake configuration file for re2.
+re2_DIR:PATH=re2_DIR-NOTFOUND
+
 //Value Computed by CMake
 tp-final-distributed-computing_BINARY_DIR:STATIC=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build
 
@@ -200,6 +473,9 @@ tp-final-distributed-computing_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 tp-final-distributed-computing_SOURCE_DIR:STATIC=/home/rafael/MEGA/Projects/tp-final-distributed-computing
+
+//The directory containing a CMake configuration file for utf8_range.
+utf8_range_DIR:PATH=/usr/lib/cmake/utf8_range
 
 
 ########################
@@ -217,7 +493,7 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=4
 //Minor version of cmake used to create the current loaded cache
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=1
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=2
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -296,7 +572,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -341,6 +617,245 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding OpenSSL
+FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/usr/lib/libcrypto.so][/usr/include][ ][v3.5.3()]
+//Details about finding PkgConfig
+FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v2.5.1()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding ZLIB
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/libz.so][/usr/include][ ][v1.3.1()]
+//Details about finding c-ares
+FIND_PACKAGE_MESSAGE_DETAILS_c-ares:INTERNAL=[/usr/lib/cmake/c-ares/c-ares-config.cmake][v1.34.5()]
+//ADVANCED property for variable: OPENSSL_CRYPTO_LIBRARY
+OPENSSL_CRYPTO_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENSSL_INCLUDE_DIR
+OPENSSL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENSSL_SSL_LIBRARY
+OPENSSL_SSL_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_ARGN
+PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+RE2_CFLAGS:INTERNAL=-pthread;-I/usr/include;-DNOMINMAX
+RE2_CFLAGS_I:INTERNAL=
+RE2_CFLAGS_OTHER:INTERNAL=-pthread;-DNOMINMAX
+RE2_FOUND:INTERNAL=1
+RE2_INCLUDEDIR:INTERNAL=/usr/include
+RE2_INCLUDE_DIRS:INTERNAL=/usr/include
+RE2_LDFLAGS:INTERNAL=-pthread;-L/usr/lib;-lre2;-labsl_log_internal_check_op;-labsl_leak_check;-labsl_log_internal_conditions;-labsl_log_internal_message;-labsl_examine_stack;-labsl_log_internal_format;-labsl_log_internal_nullguard;-labsl_log_internal_structured_proto;-labsl_log_internal_log_sink_set;-labsl_log_internal_globals;-labsl_log_globals;-labsl_log_sink;-labsl_log_entry;-labsl_log_internal_proto;-labsl_strerror;-labsl_vlog_config_internal;-labsl_log_internal_fnmatch;-labsl_flags_internal;-labsl_flags_marshalling;-labsl_flags_reflection;-labsl_flags_private_handle_accessor;-labsl_flags_commandlineflag;-labsl_flags_commandlineflag_internal;-labsl_flags_config;-labsl_flags_program_name;-labsl_raw_hash_set;-labsl_cord;-labsl_cordz_info;-labsl_cord_internal;-labsl_cordz_functions;-labsl_cordz_handle;-labsl_crc_cord_state;-labsl_crc32c;-labsl_crc_internal;-labsl_crc_cpu_detect;-labsl_hashtablez_sampler;-labsl_exponential_biased;-labsl_hash;-labsl_city;-labsl_str_format_internal;-labsl_synchronization;-labsl_graphcycles_internal;-labsl_kernel_timeout_internal;-labsl_stacktrace;-labsl_symbolize;-labsl_debugging_internal;-labsl_demangle_internal;-labsl_demangle_rust;-labsl_decode_rust_punycode;-labsl_utf8_for_code_point;-labsl_malloc_internal;-labsl_time;-labsl_civil_time;-labsl_strings;-labsl_strings_internal;-labsl_string_view;-labsl_int128;-labsl_throw_delegate;-labsl_time_zone;-labsl_tracing_internal;-labsl_base;-lrt;-labsl_raw_logging_internal;-labsl_log_severity;-labsl_spinlock_wait
+RE2_LDFLAGS_OTHER:INTERNAL=-pthread
+RE2_LIBDIR:INTERNAL=/usr/lib
+RE2_LIBRARIES:INTERNAL=re2;absl_log_internal_check_op;absl_leak_check;absl_log_internal_conditions;absl_log_internal_message;absl_examine_stack;absl_log_internal_format;absl_log_internal_nullguard;absl_log_internal_structured_proto;absl_log_internal_log_sink_set;absl_log_internal_globals;absl_log_globals;absl_log_sink;absl_log_entry;absl_log_internal_proto;absl_strerror;absl_vlog_config_internal;absl_log_internal_fnmatch;absl_flags_internal;absl_flags_marshalling;absl_flags_reflection;absl_flags_private_handle_accessor;absl_flags_commandlineflag;absl_flags_commandlineflag_internal;absl_flags_config;absl_flags_program_name;absl_raw_hash_set;absl_cord;absl_cordz_info;absl_cord_internal;absl_cordz_functions;absl_cordz_handle;absl_crc_cord_state;absl_crc32c;absl_crc_internal;absl_crc_cpu_detect;absl_hashtablez_sampler;absl_exponential_biased;absl_hash;absl_city;absl_str_format_internal;absl_synchronization;absl_graphcycles_internal;absl_kernel_timeout_internal;absl_stacktrace;absl_symbolize;absl_debugging_internal;absl_demangle_internal;absl_demangle_rust;absl_decode_rust_punycode;absl_utf8_for_code_point;absl_malloc_internal;absl_time;absl_civil_time;absl_strings;absl_strings_internal;absl_string_view;absl_int128;absl_throw_delegate;absl_time_zone;absl_tracing_internal;absl_base;rt;absl_raw_logging_internal;absl_log_severity;absl_spinlock_wait
+RE2_LIBRARY_DIRS:INTERNAL=/usr/lib
+RE2_LIBS:INTERNAL=
+RE2_LIBS_L:INTERNAL=
+RE2_LIBS_OTHER:INTERNAL=
+RE2_LIBS_PATHS:INTERNAL=
+RE2_MODULE_NAME:INTERNAL=re2
+RE2_PREFIX:INTERNAL=
+RE2_STATIC_CFLAGS:INTERNAL=-pthread;-I/usr/include;-DNOMINMAX
+RE2_STATIC_CFLAGS_I:INTERNAL=
+RE2_STATIC_CFLAGS_OTHER:INTERNAL=-pthread;-DNOMINMAX
+RE2_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include
+RE2_STATIC_LDFLAGS:INTERNAL=-pthread;-L/usr/lib;-lre2;-labsl_log_internal_check_op;-labsl_leak_check;-labsl_log_internal_conditions;-labsl_log_internal_message;-labsl_examine_stack;-labsl_log_internal_format;-labsl_log_internal_nullguard;-labsl_log_internal_structured_proto;-labsl_log_internal_log_sink_set;-labsl_log_internal_globals;-labsl_log_globals;-labsl_log_sink;-labsl_log_entry;-labsl_log_internal_proto;-labsl_strerror;-labsl_vlog_config_internal;-labsl_log_internal_fnmatch;-labsl_flags_internal;-labsl_flags_marshalling;-labsl_flags_reflection;-labsl_flags_private_handle_accessor;-labsl_flags_commandlineflag;-labsl_flags_commandlineflag_internal;-labsl_flags_config;-labsl_flags_program_name;-labsl_raw_hash_set;-labsl_cord;-labsl_cordz_info;-labsl_cord_internal;-labsl_cordz_functions;-labsl_cordz_handle;-labsl_crc_cord_state;-labsl_crc32c;-labsl_crc_internal;-labsl_crc_cpu_detect;-labsl_hashtablez_sampler;-labsl_exponential_biased;-labsl_hash;-labsl_city;-labsl_str_format_internal;-labsl_synchronization;-labsl_graphcycles_internal;-labsl_kernel_timeout_internal;-labsl_stacktrace;-labsl_symbolize;-labsl_debugging_internal;-labsl_demangle_internal;-labsl_demangle_rust;-labsl_decode_rust_punycode;-labsl_utf8_for_code_point;-labsl_malloc_internal;-labsl_time;-labsl_civil_time;-labsl_strings;-labsl_strings_internal;-labsl_string_view;-labsl_int128;-labsl_throw_delegate;-labsl_time_zone;-labsl_tracing_internal;-labsl_base;-lrt;-labsl_raw_logging_internal;-labsl_log_severity;-labsl_spinlock_wait
+RE2_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
+RE2_STATIC_LIBDIR:INTERNAL=
+RE2_STATIC_LIBRARIES:INTERNAL=re2;absl_log_internal_check_op;absl_leak_check;absl_log_internal_conditions;absl_log_internal_message;absl_examine_stack;absl_log_internal_format;absl_log_internal_nullguard;absl_log_internal_structured_proto;absl_log_internal_log_sink_set;absl_log_internal_globals;absl_log_globals;absl_log_sink;absl_log_entry;absl_log_internal_proto;absl_strerror;absl_vlog_config_internal;absl_log_internal_fnmatch;absl_flags_internal;absl_flags_marshalling;absl_flags_reflection;absl_flags_private_handle_accessor;absl_flags_commandlineflag;absl_flags_commandlineflag_internal;absl_flags_config;absl_flags_program_name;absl_raw_hash_set;absl_cord;absl_cordz_info;absl_cord_internal;absl_cordz_functions;absl_cordz_handle;absl_crc_cord_state;absl_crc32c;absl_crc_internal;absl_crc_cpu_detect;absl_hashtablez_sampler;absl_exponential_biased;absl_hash;absl_city;absl_str_format_internal;absl_synchronization;absl_graphcycles_internal;absl_kernel_timeout_internal;absl_stacktrace;absl_symbolize;absl_debugging_internal;absl_demangle_internal;absl_demangle_rust;absl_decode_rust_punycode;absl_utf8_for_code_point;absl_malloc_internal;absl_time;absl_civil_time;absl_strings;absl_strings_internal;absl_string_view;absl_int128;absl_throw_delegate;absl_time_zone;absl_tracing_internal;absl_base;rt;absl_raw_logging_internal;absl_log_severity;absl_spinlock_wait
+RE2_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib
+RE2_STATIC_LIBS:INTERNAL=
+RE2_STATIC_LIBS_L:INTERNAL=
+RE2_STATIC_LIBS_OTHER:INTERNAL=
+RE2_STATIC_LIBS_PATHS:INTERNAL=
+RE2_VERSION:INTERNAL=11.0.0
+RE2_re2_INCLUDEDIR:INTERNAL=
+RE2_re2_LIBDIR:INTERNAL=
+RE2_re2_PREFIX:INTERNAL=
+RE2_re2_VERSION:INTERNAL=
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_DEBUG
+ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
+ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+_OPENSSL_CFLAGS:INTERNAL=-I/usr/include
+_OPENSSL_CFLAGS_I:INTERNAL=
+_OPENSSL_CFLAGS_OTHER:INTERNAL=
+_OPENSSL_FOUND:INTERNAL=1
+_OPENSSL_INCLUDEDIR:INTERNAL=/usr/include
+_OPENSSL_INCLUDE_DIRS:INTERNAL=/usr/include
+_OPENSSL_LDFLAGS:INTERNAL=-L/usr/lib;-lssl;-lcrypto
+_OPENSSL_LDFLAGS_OTHER:INTERNAL=
+_OPENSSL_LIBDIR:INTERNAL=/usr/lib
+_OPENSSL_LIBRARIES:INTERNAL=ssl;crypto
+_OPENSSL_LIBRARY_DIRS:INTERNAL=/usr/lib
+_OPENSSL_LIBS:INTERNAL=
+_OPENSSL_LIBS_L:INTERNAL=
+_OPENSSL_LIBS_OTHER:INTERNAL=
+_OPENSSL_LIBS_PATHS:INTERNAL=
+_OPENSSL_MODULE_NAME:INTERNAL=openssl
+_OPENSSL_PREFIX:INTERNAL=/usr
+_OPENSSL_STATIC_CFLAGS:INTERNAL=-I/usr/include
+_OPENSSL_STATIC_CFLAGS_I:INTERNAL=
+_OPENSSL_STATIC_CFLAGS_OTHER:INTERNAL=
+_OPENSSL_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include
+_OPENSSL_STATIC_LDFLAGS:INTERNAL=-L/usr/lib;-lssl;-lcrypto;-ldl;-pthread
+_OPENSSL_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
+_OPENSSL_STATIC_LIBDIR:INTERNAL=
+_OPENSSL_STATIC_LIBRARIES:INTERNAL=ssl;crypto;dl
+_OPENSSL_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib
+_OPENSSL_STATIC_LIBS:INTERNAL=
+_OPENSSL_STATIC_LIBS_L:INTERNAL=
+_OPENSSL_STATIC_LIBS_OTHER:INTERNAL=
+_OPENSSL_STATIC_LIBS_PATHS:INTERNAL=
+_OPENSSL_VERSION:INTERNAL=3.5.3
+_OPENSSL_openssl_INCLUDEDIR:INTERNAL=
+_OPENSSL_openssl_LIBDIR:INTERNAL=
+_OPENSSL_openssl_PREFIX:INTERNAL=
+_OPENSSL_openssl_VERSION:INTERNAL=
+__pkg_config_arguments_RE2:INTERNAL=QUIET;re2
+__pkg_config_arguments__OPENSSL:INTERNAL=QUIET;openssl
+__pkg_config_checked_RE2:INTERNAL=1
+__pkg_config_checked__OPENSSL:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_base
+pkgcfg_lib_RE2_absl_base-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_city
+pkgcfg_lib_RE2_absl_city-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_civil_time
+pkgcfg_lib_RE2_absl_civil_time-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_cord
+pkgcfg_lib_RE2_absl_cord-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_cord_internal
+pkgcfg_lib_RE2_absl_cord_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_cordz_functions
+pkgcfg_lib_RE2_absl_cordz_functions-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_cordz_handle
+pkgcfg_lib_RE2_absl_cordz_handle-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_cordz_info
+pkgcfg_lib_RE2_absl_cordz_info-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_crc32c
+pkgcfg_lib_RE2_absl_crc32c-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_crc_cord_state
+pkgcfg_lib_RE2_absl_crc_cord_state-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_crc_cpu_detect
+pkgcfg_lib_RE2_absl_crc_cpu_detect-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_crc_internal
+pkgcfg_lib_RE2_absl_crc_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_debugging_internal
+pkgcfg_lib_RE2_absl_debugging_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_decode_rust_punycode
+pkgcfg_lib_RE2_absl_decode_rust_punycode-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_demangle_internal
+pkgcfg_lib_RE2_absl_demangle_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_demangle_rust
+pkgcfg_lib_RE2_absl_demangle_rust-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_examine_stack
+pkgcfg_lib_RE2_absl_examine_stack-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_exponential_biased
+pkgcfg_lib_RE2_absl_exponential_biased-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_flags_commandlineflag
+pkgcfg_lib_RE2_absl_flags_commandlineflag-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_flags_commandlineflag_internal
+pkgcfg_lib_RE2_absl_flags_commandlineflag_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_flags_config
+pkgcfg_lib_RE2_absl_flags_config-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_flags_internal
+pkgcfg_lib_RE2_absl_flags_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_flags_marshalling
+pkgcfg_lib_RE2_absl_flags_marshalling-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_flags_private_handle_accessor
+pkgcfg_lib_RE2_absl_flags_private_handle_accessor-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_flags_program_name
+pkgcfg_lib_RE2_absl_flags_program_name-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_flags_reflection
+pkgcfg_lib_RE2_absl_flags_reflection-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_graphcycles_internal
+pkgcfg_lib_RE2_absl_graphcycles_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_hash
+pkgcfg_lib_RE2_absl_hash-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_hashtablez_sampler
+pkgcfg_lib_RE2_absl_hashtablez_sampler-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_int128
+pkgcfg_lib_RE2_absl_int128-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_kernel_timeout_internal
+pkgcfg_lib_RE2_absl_kernel_timeout_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_leak_check
+pkgcfg_lib_RE2_absl_leak_check-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_entry
+pkgcfg_lib_RE2_absl_log_entry-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_globals
+pkgcfg_lib_RE2_absl_log_globals-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_internal_check_op
+pkgcfg_lib_RE2_absl_log_internal_check_op-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_internal_conditions
+pkgcfg_lib_RE2_absl_log_internal_conditions-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_internal_fnmatch
+pkgcfg_lib_RE2_absl_log_internal_fnmatch-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_internal_format
+pkgcfg_lib_RE2_absl_log_internal_format-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_internal_globals
+pkgcfg_lib_RE2_absl_log_internal_globals-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_internal_log_sink_set
+pkgcfg_lib_RE2_absl_log_internal_log_sink_set-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_internal_message
+pkgcfg_lib_RE2_absl_log_internal_message-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_internal_nullguard
+pkgcfg_lib_RE2_absl_log_internal_nullguard-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_internal_proto
+pkgcfg_lib_RE2_absl_log_internal_proto-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_internal_structured_proto
+pkgcfg_lib_RE2_absl_log_internal_structured_proto-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_severity
+pkgcfg_lib_RE2_absl_log_severity-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_log_sink
+pkgcfg_lib_RE2_absl_log_sink-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_malloc_internal
+pkgcfg_lib_RE2_absl_malloc_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_raw_hash_set
+pkgcfg_lib_RE2_absl_raw_hash_set-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_raw_logging_internal
+pkgcfg_lib_RE2_absl_raw_logging_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_spinlock_wait
+pkgcfg_lib_RE2_absl_spinlock_wait-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_stacktrace
+pkgcfg_lib_RE2_absl_stacktrace-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_str_format_internal
+pkgcfg_lib_RE2_absl_str_format_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_strerror
+pkgcfg_lib_RE2_absl_strerror-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_string_view
+pkgcfg_lib_RE2_absl_string_view-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_strings
+pkgcfg_lib_RE2_absl_strings-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_strings_internal
+pkgcfg_lib_RE2_absl_strings_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_symbolize
+pkgcfg_lib_RE2_absl_symbolize-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_synchronization
+pkgcfg_lib_RE2_absl_synchronization-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_throw_delegate
+pkgcfg_lib_RE2_absl_throw_delegate-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_time
+pkgcfg_lib_RE2_absl_time-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_time_zone
+pkgcfg_lib_RE2_absl_time_zone-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_tracing_internal
+pkgcfg_lib_RE2_absl_tracing_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_utf8_for_code_point
+pkgcfg_lib_RE2_absl_utf8_for_code_point-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_absl_vlog_config_internal
+pkgcfg_lib_RE2_absl_vlog_config_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_re2
+pkgcfg_lib_RE2_re2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_RE2_rt
+pkgcfg_lib_RE2_rt-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib__OPENSSL_crypto
+pkgcfg_lib__OPENSSL_crypto-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib__OPENSSL_ssl
+pkgcfg_lib__OPENSSL_ssl-ADVANCED:INTERNAL=1
+prefix_result:INTERNAL=/usr/lib
+//ADVANCED property for variable: protobuf_MODULE_COMPATIBLE
+protobuf_MODULE_COMPATIBLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: protobuf_VERBOSE
+protobuf_VERBOSE-ADVANCED:INTERNAL=1
 

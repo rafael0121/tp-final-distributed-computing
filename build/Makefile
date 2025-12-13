@@ -117,41 +117,56 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named server
+# Target rules for targets named lamport
 
 # Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server
-.PHONY : server
+lamport: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lamport
+.PHONY : lamport
 
 # fast build rule for target.
-server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-.PHONY : server/fast
+lamport/fast:
+	$(MAKE) $(MAKESILENT) -f common/lamport/CMakeFiles/lamport.dir/build.make common/lamport/CMakeFiles/lamport.dir/build
+.PHONY : lamport/fast
 
-sources/main.o: sources/main.cpp.o
-.PHONY : sources/main.o
+#=============================================================================
+# Target rules for targets named protocols
 
-# target to build an object file
-sources/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/sources/main.cpp.o
-.PHONY : sources/main.cpp.o
+# Build rule for target.
+protocols: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocols
+.PHONY : protocols
 
-sources/main.i: sources/main.cpp.i
-.PHONY : sources/main.i
+# fast build rule for target.
+protocols/fast:
+	$(MAKE) $(MAKESILENT) -f common/protocols/CMakeFiles/protocols.dir/build.make common/protocols/CMakeFiles/protocols.dir/build
+.PHONY : protocols/fast
 
-# target to preprocess a source file
-sources/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/sources/main.cpp.i
-.PHONY : sources/main.cpp.i
+#=============================================================================
+# Target rules for targets named compressor
 
-sources/main.s: sources/main.cpp.s
-.PHONY : sources/main.s
+# Build rule for target.
+compressor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compressor
+.PHONY : compressor
 
-# target to generate assembly for a file
-sources/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/sources/main.cpp.s
-.PHONY : sources/main.cpp.s
+# fast build rule for target.
+compressor/fast:
+	$(MAKE) $(MAKESILENT) -f compressor/CMakeFiles/compressor.dir/build.make compressor/CMakeFiles/compressor.dir/build
+.PHONY : compressor/fast
+
+#=============================================================================
+# Target rules for targets named sensor
+
+# Build rule for target.
+sensor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sensor
+.PHONY : sensor
+
+# fast build rule for target.
+sensor/fast:
+	$(MAKE) $(MAKESILENT) -f sensor/CMakeFiles/sensor.dir/build.make sensor/CMakeFiles/sensor.dir/build
+.PHONY : sensor/fast
 
 # Help Target
 help:
@@ -161,10 +176,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... server"
-	@echo "... sources/main.o"
-	@echo "... sources/main.i"
-	@echo "... sources/main.s"
+	@echo "... compressor"
+	@echo "... lamport"
+	@echo "... protocols"
+	@echo "... sensor"
 .PHONY : help
 
 
