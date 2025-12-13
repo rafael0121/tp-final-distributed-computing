@@ -1,9 +1,9 @@
-#ifndef RPC_COMPRESSOR_HPP_
-#define RPC_COMPRESSOR_HPP_
+#ifndef RPC_ELECTION_HPP_
+#define RPC_ELECTION_HPP_
 
 // Protocols
-#include <ringElection/ringElection.grpc.pb.h>
-#include <ringElection/ringElection.pb.h>
+#include <ringElection.grpc.pb.h>
+#include <ringElection.pb.h>
 
 
 class RingNodeServiceImpl final : public ring::RingNode::Service {

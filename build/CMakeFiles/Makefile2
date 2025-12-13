@@ -113,20 +113,62 @@ common/lamport/clean: common/lamport/CMakeFiles/lamport.dir/clean
 # Directory level rules for directory common/protocols
 
 # Recursive "all" directory target.
-common/protocols/all: common/protocols/CMakeFiles/ringElection.dir/all
+common/protocols/all: common/protocols/discoverNodes/all
+common/protocols/all: common/protocols/ringElection/all
 .PHONY : common/protocols/all
 
 # Recursive "codegen" directory target.
-common/protocols/codegen: common/protocols/CMakeFiles/ringElection.dir/codegen
+common/protocols/codegen: common/protocols/discoverNodes/codegen
+common/protocols/codegen: common/protocols/ringElection/codegen
 .PHONY : common/protocols/codegen
 
 # Recursive "preinstall" directory target.
-common/protocols/preinstall:
+common/protocols/preinstall: common/protocols/discoverNodes/preinstall
+common/protocols/preinstall: common/protocols/ringElection/preinstall
 .PHONY : common/protocols/preinstall
 
 # Recursive "clean" directory target.
-common/protocols/clean: common/protocols/CMakeFiles/ringElection.dir/clean
+common/protocols/clean: common/protocols/discoverNodes/clean
+common/protocols/clean: common/protocols/ringElection/clean
 .PHONY : common/protocols/clean
+
+#=============================================================================
+# Directory level rules for directory common/protocols/discoverNodes
+
+# Recursive "all" directory target.
+common/protocols/discoverNodes/all: common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/all
+.PHONY : common/protocols/discoverNodes/all
+
+# Recursive "codegen" directory target.
+common/protocols/discoverNodes/codegen: common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/codegen
+.PHONY : common/protocols/discoverNodes/codegen
+
+# Recursive "preinstall" directory target.
+common/protocols/discoverNodes/preinstall:
+.PHONY : common/protocols/discoverNodes/preinstall
+
+# Recursive "clean" directory target.
+common/protocols/discoverNodes/clean: common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/clean
+.PHONY : common/protocols/discoverNodes/clean
+
+#=============================================================================
+# Directory level rules for directory common/protocols/ringElection
+
+# Recursive "all" directory target.
+common/protocols/ringElection/all: common/protocols/ringElection/CMakeFiles/ringElection.dir/all
+.PHONY : common/protocols/ringElection/all
+
+# Recursive "codegen" directory target.
+common/protocols/ringElection/codegen: common/protocols/ringElection/CMakeFiles/ringElection.dir/codegen
+.PHONY : common/protocols/ringElection/codegen
+
+# Recursive "preinstall" directory target.
+common/protocols/ringElection/preinstall:
+.PHONY : common/protocols/ringElection/preinstall
+
+# Recursive "clean" directory target.
+common/protocols/ringElection/clean: common/protocols/ringElection/CMakeFiles/ringElection.dir/clean
+.PHONY : common/protocols/ringElection/clean
 
 #=============================================================================
 # Directory level rules for directory compressor
@@ -173,7 +215,7 @@ sensor/clean: sensor/CMakeFiles/sensor.dir/clean
 common/lamport/CMakeFiles/lamport.dir/all:
 	$(MAKE) $(MAKESILENT) -f common/lamport/CMakeFiles/lamport.dir/build.make common/lamport/CMakeFiles/lamport.dir/depend
 	$(MAKE) $(MAKESILENT) -f common/lamport/CMakeFiles/lamport.dir/build.make common/lamport/CMakeFiles/lamport.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=4,5 "Built target lamport"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=9,10 "Built target lamport"
 .PHONY : common/lamport/CMakeFiles/lamport.dir/all
 
 # Build rule for subdir invocation for target.
@@ -190,7 +232,7 @@ lamport: common/lamport/CMakeFiles/lamport.dir/rule
 # codegen rule for target.
 common/lamport/CMakeFiles/lamport.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f common/lamport/CMakeFiles/lamport.dir/build.make common/lamport/CMakeFiles/lamport.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=4,5 "Finished codegen for target lamport"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=9,10 "Finished codegen for target lamport"
 .PHONY : common/lamport/CMakeFiles/lamport.dir/codegen
 
 # clean rule for target.
@@ -199,43 +241,76 @@ common/lamport/CMakeFiles/lamport.dir/clean:
 .PHONY : common/lamport/CMakeFiles/lamport.dir/clean
 
 #=============================================================================
-# Target rules for target common/protocols/CMakeFiles/ringElection.dir
+# Target rules for target common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir
 
 # All Build rule for target.
-common/protocols/CMakeFiles/ringElection.dir/all:
-	$(MAKE) $(MAKESILENT) -f common/protocols/CMakeFiles/ringElection.dir/build.make common/protocols/CMakeFiles/ringElection.dir/depend
-	$(MAKE) $(MAKESILENT) -f common/protocols/CMakeFiles/ringElection.dir/build.make common/protocols/CMakeFiles/ringElection.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=6,7,8,9,10 "Built target ringElection"
-.PHONY : common/protocols/CMakeFiles/ringElection.dir/all
+common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/all:
+	$(MAKE) $(MAKESILENT) -f common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/build.make common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/depend
+	$(MAKE) $(MAKESILENT) -f common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/build.make common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=4,5,6,7,8 "Built target discoverNodes"
+.PHONY : common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/all
 
 # Build rule for subdir invocation for target.
-common/protocols/CMakeFiles/ringElection.dir/rule: cmake_check_build_system
+common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/protocols/CMakeFiles/ringElection.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles 0
-.PHONY : common/protocols/CMakeFiles/ringElection.dir/rule
+.PHONY : common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/rule
 
 # Convenience name for target.
-ringElection: common/protocols/CMakeFiles/ringElection.dir/rule
+discoverNodes: common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/rule
+.PHONY : discoverNodes
+
+# codegen rule for target.
+common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/build.make common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=4,5,6,7,8 "Finished codegen for target discoverNodes"
+.PHONY : common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/codegen
+
+# clean rule for target.
+common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/clean:
+	$(MAKE) $(MAKESILENT) -f common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/build.make common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/clean
+.PHONY : common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/clean
+
+#=============================================================================
+# Target rules for target common/protocols/ringElection/CMakeFiles/ringElection.dir
+
+# All Build rule for target.
+common/protocols/ringElection/CMakeFiles/ringElection.dir/all:
+	$(MAKE) $(MAKESILENT) -f common/protocols/ringElection/CMakeFiles/ringElection.dir/build.make common/protocols/ringElection/CMakeFiles/ringElection.dir/depend
+	$(MAKE) $(MAKESILENT) -f common/protocols/ringElection/CMakeFiles/ringElection.dir/build.make common/protocols/ringElection/CMakeFiles/ringElection.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=11,12,13,14,15 "Built target ringElection"
+.PHONY : common/protocols/ringElection/CMakeFiles/ringElection.dir/all
+
+# Build rule for subdir invocation for target.
+common/protocols/ringElection/CMakeFiles/ringElection.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/protocols/ringElection/CMakeFiles/ringElection.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles 0
+.PHONY : common/protocols/ringElection/CMakeFiles/ringElection.dir/rule
+
+# Convenience name for target.
+ringElection: common/protocols/ringElection/CMakeFiles/ringElection.dir/rule
 .PHONY : ringElection
 
 # codegen rule for target.
-common/protocols/CMakeFiles/ringElection.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f common/protocols/CMakeFiles/ringElection.dir/build.make common/protocols/CMakeFiles/ringElection.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=6,7,8,9,10 "Finished codegen for target ringElection"
-.PHONY : common/protocols/CMakeFiles/ringElection.dir/codegen
+common/protocols/ringElection/CMakeFiles/ringElection.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f common/protocols/ringElection/CMakeFiles/ringElection.dir/build.make common/protocols/ringElection/CMakeFiles/ringElection.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=11,12,13,14,15 "Finished codegen for target ringElection"
+.PHONY : common/protocols/ringElection/CMakeFiles/ringElection.dir/codegen
 
 # clean rule for target.
-common/protocols/CMakeFiles/ringElection.dir/clean:
-	$(MAKE) $(MAKESILENT) -f common/protocols/CMakeFiles/ringElection.dir/build.make common/protocols/CMakeFiles/ringElection.dir/clean
-.PHONY : common/protocols/CMakeFiles/ringElection.dir/clean
+common/protocols/ringElection/CMakeFiles/ringElection.dir/clean:
+	$(MAKE) $(MAKESILENT) -f common/protocols/ringElection/CMakeFiles/ringElection.dir/build.make common/protocols/ringElection/CMakeFiles/ringElection.dir/clean
+.PHONY : common/protocols/ringElection/CMakeFiles/ringElection.dir/clean
 
 #=============================================================================
 # Target rules for target compressor/CMakeFiles/compressor.dir
 
 # All Build rule for target.
 compressor/CMakeFiles/compressor.dir/all: common/lamport/CMakeFiles/lamport.dir/all
-compressor/CMakeFiles/compressor.dir/all: common/protocols/CMakeFiles/ringElection.dir/all
+compressor/CMakeFiles/compressor.dir/all: common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/all
+compressor/CMakeFiles/compressor.dir/all: common/protocols/ringElection/CMakeFiles/ringElection.dir/all
 	$(MAKE) $(MAKESILENT) -f compressor/CMakeFiles/compressor.dir/build.make compressor/CMakeFiles/compressor.dir/depend
 	$(MAKE) $(MAKESILENT) -f compressor/CMakeFiles/compressor.dir/build.make compressor/CMakeFiles/compressor.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=1,2,3 "Built target compressor"
@@ -243,7 +318,7 @@ compressor/CMakeFiles/compressor.dir/all: common/protocols/CMakeFiles/ringElecti
 
 # Build rule for subdir invocation for target.
 compressor/CMakeFiles/compressor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compressor/CMakeFiles/compressor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles 0
 .PHONY : compressor/CMakeFiles/compressor.dir/rule
@@ -268,10 +343,10 @@ compressor/CMakeFiles/compressor.dir/clean:
 
 # All Build rule for target.
 sensor/CMakeFiles/sensor.dir/all: common/lamport/CMakeFiles/lamport.dir/all
-sensor/CMakeFiles/sensor.dir/all: common/protocols/CMakeFiles/ringElection.dir/all
+sensor/CMakeFiles/sensor.dir/all: common/protocols/ringElection/CMakeFiles/ringElection.dir/all
 	$(MAKE) $(MAKESILENT) -f sensor/CMakeFiles/sensor.dir/build.make sensor/CMakeFiles/sensor.dir/depend
 	$(MAKE) $(MAKESILENT) -f sensor/CMakeFiles/sensor.dir/build.make sensor/CMakeFiles/sensor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=11,12 "Built target sensor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=16,17 "Built target sensor"
 .PHONY : sensor/CMakeFiles/sensor.dir/all
 
 # Build rule for subdir invocation for target.
@@ -288,7 +363,7 @@ sensor: sensor/CMakeFiles/sensor.dir/rule
 # codegen rule for target.
 sensor/CMakeFiles/sensor.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f sensor/CMakeFiles/sensor.dir/build.make sensor/CMakeFiles/sensor.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=11,12 "Finished codegen for target sensor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafael/MEGA/Projects/tp-final-distributed-computing/build/CMakeFiles --progress-num=16,17 "Finished codegen for target sensor"
 .PHONY : sensor/CMakeFiles/sensor.dir/codegen
 
 # clean rule for target.

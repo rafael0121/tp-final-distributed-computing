@@ -1,8 +1,8 @@
-#include "rpc_compressor.hpp"
+#include "rpc_election.hpp"
 
 // Protocols
-#include <ringElection/ringElection.grpc.pb.h>
-#include <ringElection/ringElection.pb.h>
+#include <ringElection.grpc.pb.h>
+#include <ringElection.pb.h>
 
 // GRPC
 #include <grpcpp/server_builder.h>

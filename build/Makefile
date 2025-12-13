@@ -130,6 +130,19 @@ lamport/fast:
 .PHONY : lamport/fast
 
 #=============================================================================
+# Target rules for targets named discoverNodes
+
+# Build rule for target.
+discoverNodes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 discoverNodes
+.PHONY : discoverNodes
+
+# fast build rule for target.
+discoverNodes/fast:
+	$(MAKE) $(MAKESILENT) -f common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/build.make common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/build
+.PHONY : discoverNodes/fast
+
+#=============================================================================
 # Target rules for targets named ringElection
 
 # Build rule for target.
@@ -139,7 +152,7 @@ ringElection: cmake_check_build_system
 
 # fast build rule for target.
 ringElection/fast:
-	$(MAKE) $(MAKESILENT) -f common/protocols/CMakeFiles/ringElection.dir/build.make common/protocols/CMakeFiles/ringElection.dir/build
+	$(MAKE) $(MAKESILENT) -f common/protocols/ringElection/CMakeFiles/ringElection.dir/build.make common/protocols/ringElection/CMakeFiles/ringElection.dir/build
 .PHONY : ringElection/fast
 
 #=============================================================================
@@ -177,6 +190,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... compressor"
+	@echo "... discoverNodes"
 	@echo "... lamport"
 	@echo "... ringElection"
 	@echo "... sensor"
