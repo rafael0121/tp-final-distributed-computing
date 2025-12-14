@@ -10,11 +10,12 @@ message ElectionMsg {
   int32 origin_id = 1;
   int32 best_energy = 2;
   int32 best_id = 3;
+  string best_address = 4;
 }
 
 message CoordinatorMsg {
   int32 leader_id = 1;
-  int32 leader_energy = 2;
+  string leader_address = 2;
 }
 
 message Ack { bool ok = 1; }

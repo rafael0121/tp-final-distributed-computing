@@ -1,17 +1,17 @@
-#ifndef NODE_STATUS_HPP
-#define NODE_STATUS_HPP
+#ifndef PEER_STATUS_HPP
+#define PEER_STATUS_HPP
 
 #include<list>
 #include<string>
 
 struct Peer {
     int id;
-    std::string ip;
+    std::string address;
 };
 
-class NodeStatus {
+class PeerStatus {
 public:
-    static NodeStatus& getInstance();
+    static PeerStatus& getInstance();
 
     // KnownNodes
     void addKnownNodes(Peer node);
@@ -28,15 +28,27 @@ public:
     // Get Values
     int getEnergyLevel();
     int getId();
+    std::string getAddress();
+
+    // Set address.
+    void setAddress(std::string new_address);
+    // Coordinator
+    Peer getCoordinator();
+    void setCoordinator(Peer newCoordinator);
 
 private:
-    const int id;
+    int id;
+    std::string address;
+
     int energy_level;
+
+    // Coordinator
+    Peer coordinator;
 
     std::list<Peer> knownNodes;
     std::list<Peer> knownSensors;
 
-    NodeStatus();
+    PeerStatus();
 };
 
 #endif

@@ -5,10 +5,12 @@
 #include <ringElection.grpc.pb.h>
 #include <ringElection.pb.h>
 
+// Common
+#include <peer_status.hpp>
 
 class RingNodeServiceImpl final : public ring::RingNode::Service {
 public:
-  RingNodeServiceImpl(int id, const std::string& successor_addr);
+  RingNodeServiceImpl();
 
   grpc::Status ReceiveElection(grpc::ServerContext* ctx, const ring::ElectionMsg* req, ring::Ack* resp);
 
@@ -17,13 +19,11 @@ public:
   void startServer(const std::string& listen_addr);
 
 private:
-  int my_id;
-  int my_energy;
-  std::string successor;
-  std::atomic<int> coordinator_id;
 
-  void forwardElection(int origin, int current_max_id, int current_max_energy);
-  void sendCoordinator(int leader);
+  Peer findSuccessor();
+
+  void forwardElection(int origin, int current_best_id, int current_best_energy, std::string current_best_address);
+  void sendCoordinator(int leader_id, std::string leader_address);
 };
 
 #endif

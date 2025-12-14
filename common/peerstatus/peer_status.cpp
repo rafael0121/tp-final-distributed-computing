@@ -4,36 +4,77 @@
 #include <list>
 #include <algorithm>
 #include <string>
+#include <random>
 
 std::mutex builder;
 std::mutex list;
 
-NodeStatus& NodeStatus::getInstance(){
+/* Private builder */
+
+PeerStatus::PeerStatus(){
+    // Random engine (seeded with system clock)
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    // Distribution: from 1 up to INT32_MAX
+    std::uniform_int_distribution<int> dist(1, INT32_MAX);
+
+    // Generate peer id;
+    id = dist(gen);
+
+    address = "";
+}
+
+/* Set */
+
+void PeerStatus::setAddress(std::string new_address){
+    address = new_address;
+}
+
+/* Gets */
+
+PeerStatus& PeerStatus::getInstance(){
     std::lock_guard<std::mutex> guard(builder);
 
-    static NodeStatus nodeStatus = NodeStatus();
+    static PeerStatus nodeStatus = PeerStatus();
 
     return nodeStatus;
 }
 
-int NodeStatus::getEnergyLevel(){
+int PeerStatus::getEnergyLevel(){
     return energy_level;
 }
 
-int NodeStatus::getId(){
+int PeerStatus::getId(){
     return id;
+}
+
+std::string PeerStatus::getAddress(){
+    return address;
+}
+
+/*
+    Coordinator
+*/
+
+Peer PeerStatus::getCoordinator(){
+    return coordinator;
+}
+
+void PeerStatus::setCoordinator(Peer newCoordinator){
+    coordinator = newCoordinator;
 }
 
 /*
     KnownNodes
 */
 
-void NodeStatus::addKnownNodes(Peer node){
+void PeerStatus::addKnownNodes(Peer node){
     std::lock_guard<std::mutex> guard(list);
     knownNodes.push_back(node);
 }
 
-void NodeStatus::removeKnownNodes(Peer node){
+void PeerStatus::removeKnownNodes(Peer node){
     std::lock_guard<std::mutex> guard(list);
     int node_id = node.id;
 
@@ -46,7 +87,7 @@ void NodeStatus::removeKnownNodes(Peer node){
     }
 }
 
-void NodeStatus::updateKnownNodes(const std::list<Peer>& nodes){
+void PeerStatus::updateKnownNodes(const std::list<Peer>& nodes){
     std::lock_guard<std::mutex> guard(list);
 
     for(const auto& node : nodes) {
@@ -63,7 +104,7 @@ void NodeStatus::updateKnownNodes(const std::list<Peer>& nodes){
     }
 }
 
-std::list<Peer> NodeStatus::copyKnownNodes(){
+std::list<Peer> PeerStatus::copyKnownNodes(){
     return knownNodes;
 }
 
@@ -71,12 +112,12 @@ std::list<Peer> NodeStatus::copyKnownNodes(){
     KnownSensors
 */
 
-void NodeStatus::addKnownSensors(Peer sensor){
+void PeerStatus::addKnownSensors(Peer sensor){
     std::lock_guard<std::mutex> guard(list);
     knownSensors.push_back(sensor);
 }
 
-void NodeStatus::removeKnownSensors(Peer sensor){
+void PeerStatus::removeKnownSensors(Peer sensor){
     std::lock_guard<std::mutex> guard(list);
     int sensor_id = sensor.id;
 
@@ -89,7 +130,7 @@ void NodeStatus::removeKnownSensors(Peer sensor){
     }
 }
 
-void NodeStatus::updateKnownSensors(const std::list<Peer>& sensors){
+void PeerStatus::updateKnownSensors(const std::list<Peer>& sensors){
     std::lock_guard<std::mutex> guard(list);
 
     for(const auto& sensor : sensors) {
@@ -105,6 +146,6 @@ void NodeStatus::updateKnownSensors(const std::list<Peer>& sensors){
     }
 }
 
-std::list<Peer> NodeStatus::copyKnownSensors(){
+std::list<Peer> PeerStatus::copyKnownSensors(){
     return knownSensors;
 }

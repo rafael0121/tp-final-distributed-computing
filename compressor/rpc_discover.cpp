@@ -5,7 +5,9 @@
 #include <discoverNodes.grpc.pb.h>
 #include <discoverNodes.pb.h>
 
-NodeStatus myStatus = NodeStatus::getInstance();
+extern PeerStatus myStatus;
+
+DiscoveryServiceImpl::DiscoveryServiceImpl(){}
 
 grpc::Status DiscoveryServiceImpl::Hello(
     grpc::ServerContext* context, 
@@ -21,14 +23,13 @@ grpc::Status DiscoveryServiceImpl::Hello(
     for (const auto& n : nodes) {
         disc::Peer* newNode = reply->add_nodes();
         newNode->set_peer_id(n.id);
-        newNode->set_peer_ip(n.ip);
+        newNode->set_peer_ip(n.address);
     }
 
-    // add sensors
     for (const auto& s : sensors) {
         disc::Peer* newSensor = reply->add_sensors();
         newSensor->set_peer_id(s.id);
-        newSensor->set_peer_ip(s.ip);
+        newSensor->set_peer_ip(s.address);
     }
 
     return grpc::Status::OK;
