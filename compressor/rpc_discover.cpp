@@ -4,9 +4,6 @@
 #include <discoverNodes.grpc.pb.h>
 #include <discoverNodes.pb.h>
 
-// GRPC
-#include <grpcpp/server_builder.h>
-
 DiscoveryServiceImpl::DiscoveryServiceImpl(int id, int energy)
     : node_id(id), energy_level(energy) {}
 

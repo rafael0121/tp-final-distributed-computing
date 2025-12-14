@@ -16,8 +16,7 @@ public:
     );
 
 private:
-    int node_id;
-    int energy_level;
+    
 };
 
 #endif

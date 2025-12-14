@@ -4,9 +4,6 @@
 #include <compressorNode.grpc.pb.h>
 #include <compressorNode.pb.h>
 
-// GRPC
-#include <grpcpp/server_builder.h>
-
 grpc::Status CompressorNodeImpl::SendData(
     grpc::ServerContext* context,
     const compn::SensorBatch* request,
