@@ -47,6 +47,7 @@ grpc::Status DiscoveryServiceImpl::hello(
 }
 
 void DiscoveryServiceImpl::syncNodes(std::string dest_address){
+
     int myId = myStatus.getId();
 
     // Leader node.
