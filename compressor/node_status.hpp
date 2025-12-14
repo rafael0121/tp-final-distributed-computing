@@ -13,15 +13,18 @@ class NodeStatus {
 public:
     static NodeStatus& getInstance(int id, int energy);
 
-    void addKnownNodes(Peer peer);
-    void removeKnownNodes(Peer peer);
+    void addKnownNodes(Peer node);
+    void removeKnownNodes(Peer node);
+    void updateKnownNodes(std::list<Peer> nodes);
 
-    void addKnownSensors(Peer peer);
-    void RemoveKnownSensors(Peer peer);
+    void addKnownSensors(Peer sensors);
+    void removeKnownSensors(Peer sensors);
+    void updateKnownSensors(const std::list<Peer>& sensors);
 
 private:
     const int id;
     int energy_level;
+
     std::list<Peer> knownNodes;
     std::list<Peer> knownSensors;
 

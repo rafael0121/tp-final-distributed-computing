@@ -14,14 +14,18 @@ NodeStatus& NodeStatus::getInstance(int id, int energy){
     static NodeStatus nodeStatus = NodeStatus(id, energy);
 
     return nodeStatus;
- }
+}
 
- void NodeStatus::addKnownNodes(Peer node){
+/*
+    KnownNodes
+*/
+
+void NodeStatus::addKnownNodes(Peer node){
     std::lock_guard<std::mutex> guard(list);
     knownNodes.push_back(node);
- };
+}
 
- void NodeStatus::removeKnownNodes(Peer node){
+void NodeStatus::removeKnownNodes(Peer node){
     std::lock_guard<std::mutex> guard(list);
     int node_id = node.id;
 
@@ -32,14 +36,33 @@ NodeStatus& NodeStatus::getInstance(int id, int energy){
     if(deleteNode != knownNodes.end()){
         knownNodes.erase(deleteNode);
     }
- };
+}
 
- void NodeStatus::addKnownSensors(Peer sensor){
+void NodeStatus::updateKnownSensors(const std::list<Peer>& sensors){
+    std::lock_guard<std::mutex> guard(list);
+
+    for(const auto& sensor : sensors) {
+        // Search for existing node with same id.
+        auto it = std::find_if(knownNodes.begin(), knownNodes.end(),
+                                [sensor](const Peer& s){
+                                    return s.id == sensor.id;
+                                });
+        if(it == knownNodes.end()) {
+            knownNodes.push_back(sensor);
+        }
+    }
+}
+
+/*
+    KnownSensors
+*/
+
+void NodeStatus::addKnownSensors(Peer sensor){
     std::lock_guard<std::mutex> guard(list);
     knownSensors.push_back(sensor);
- };
+}
 
- void NodeStatus::RemoveKnownSensors(Peer sensor){
+void NodeStatus::removeKnownSensors(Peer sensor){
     std::lock_guard<std::mutex> guard(list);
     int sensor_id = sensor.id;
 
@@ -50,4 +73,19 @@ NodeStatus& NodeStatus::getInstance(int id, int energy){
     if(deleteSensor != knownNodes.end()){
         knownNodes.erase(deleteSensor);
     }
- };
+}
+
+void NodeStatus::updateKnownSensors(const std::list<Peer>& sensors){
+    std::lock_guard<std::mutex> guard(list);
+
+    for(const auto& sensor : sensors) {
+        // Search for existing node with same id.
+        auto it = std::find_if(knownNodes.begin(), knownNodes.end(),
+                                [sensor](const Peer& s){
+                                    return s.id == sensor.id;
+                                });
+        if(it == knownNodes.end()) {
+            knownNodes.push_back(sensor);
+        }
+    }
+}
