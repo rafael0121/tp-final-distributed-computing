@@ -1,5 +1,7 @@
 #include "rpc_discover.hpp"
 #include <peer_status.hpp>
+#include <logger.hpp>
+#include <utils.hpp>
 
 // GRPC
 #include <grpcpp/grpcpp.h>
@@ -12,12 +14,22 @@ extern PeerStatus myStatus;
 
 DiscoveryServiceImpl::DiscoveryServiceImpl(){}
 
-grpc::Status DiscoveryServiceImpl::hello(
+grpc::Status DiscoveryServiceImpl::Hello(
     grpc::ServerContext* context, 
     const disc::HelloRequest* request,
     disc::HelloReply* reply
 ){
+    // Sender informations
+    int sender_id = request->sender_id();
+    std::string sender_address = Utils::removeIPv4Prefix(context->peer()) ;
+
     int myId = myStatus.getId();
+
+    // Add the sender to known nodes
+    Peer sender_node = {sender_id, sender_address};
+    myStatus.addKnownSensors(sender_node);
+
+    LOG_DBUG("Requested sync by ", sender_address);
 
     // Nodes and sensors to send.
     std::list<Peer> nodes = myStatus.copyKnownNodes();
@@ -43,10 +55,12 @@ grpc::Status DiscoveryServiceImpl::hello(
         newSensor->set_peer_ip(s.address);
     }
 
+    LOG_DBUG("Replying sync...");
     return grpc::Status::OK;
 }
 
 void DiscoveryServiceImpl::syncNodes(std::string dest_address){
+    LOG_DBUG("Start syncNodes");
 
     int myId = myStatus.getId();
 
@@ -62,17 +76,19 @@ void DiscoveryServiceImpl::syncNodes(std::string dest_address){
     grpc::ClientContext context;
     disc::HelloReply reply;
 
+    request.set_sender_id(myId);
 
     // Create channel to the successor.
+    LOG_DBUG("Sync with ", dest_address, "...");
     auto channel = grpc::CreateChannel(dest_address, grpc::InsecureChannelCredentials());
     std::unique_ptr<disc::DiscoveryService::Stub> stub 
                     = disc::DiscoveryService::NewStub(channel);
 
-    request.set_sender_id(myId);
-
+    LOG_DBUG("Sending Hello...");
     grpc::Status status = stub->Hello(&context, request, &reply);
 
     if(status.ok()){
+        LOG_DBUG("Hello reply: OK");
         Peer dest_node = {reply.node_id(), dest_address};
         nodes.push_back(dest_node);
 
@@ -91,5 +107,9 @@ void DiscoveryServiceImpl::syncNodes(std::string dest_address){
 
         myStatus.updateKnownNodes(nodes);
         myStatus.updateKnownSensors(nodes);
+
+        LOG_DBUG("Nodes synced");
+    } else {
+        LOG_ERRO("Hello reply: ", status.error_message());
     }
 }

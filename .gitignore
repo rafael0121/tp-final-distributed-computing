@@ -42,3 +42,5 @@
 
 # Cmake build
 build
+
+.vscode
