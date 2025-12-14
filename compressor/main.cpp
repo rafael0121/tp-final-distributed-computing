@@ -78,7 +78,7 @@ int getPort(const std::string& addr) {
 // Thread
 void printStatus(){
     while(true){
-        sleep(5);
+        sleep(60);
         myStatus.printStatus();
     }
 }
