@@ -9,5 +9,6 @@ set(CMAKE_BUILD_TYPE Debug)
 # Add libraries
 add_subdirectory(common/lamport)
 add_subdirectory(common/protocols)
+add_subdirectory(common/peerstatus)
 add_subdirectory(compressor)
 add_subdirectory(sensor)
