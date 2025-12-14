@@ -78,7 +78,7 @@ int getPort(const std::string& addr) {
 // Thread
 void printStatus(){
     while(true){
-        sleep(30);
+        sleep(10);
         myStatus.printStatus();
     }
 }
@@ -103,7 +103,11 @@ void mainBehavior(){
             sleep(30);
         } else {
             LOG_INFO("The coordinator is ", myStatus.getCoordinator().id);
-            discoverNodes.syncNodes(known_node_address);
+            // Sync with the coordinator.
+            if(!discoverNodes.syncNodes(myStatus.getCoordinator().address)){
+                ringNode.callElection();
+                sleep(30); // Election timeout
+            };
             sleep(30);
         }
     }

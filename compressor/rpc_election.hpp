@@ -16,7 +16,7 @@ public:
 
   grpc::Status ReceiveCoordinator(grpc::ServerContext* ctx, const ring::CoordinatorMsg* req, ring::Ack* resp);
 
-  void startServer(const std::string& listen_addr);
+  void callElection();
 
 private:
 
