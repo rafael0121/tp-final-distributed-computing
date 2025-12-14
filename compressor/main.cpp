@@ -32,7 +32,7 @@ void start_rpc_server(std::string address, int port){
 }
 
 // --knownnode
-std::string known_node;
+std::string known_node_address;
 
 int parse_args(int argc, char *argv[]){
     bool check_address_arg = false;
@@ -48,7 +48,7 @@ int parse_args(int argc, char *argv[]){
             check_address_arg = true;
         } else 
         if (arg == "--knownode" && i + 1 < argc) {
-            known_node = argv[++i];
+            known_node_address = argv[++i];
         }
     }
 
@@ -80,10 +80,7 @@ int main(int argc, char *argv[]){
 
     start_rpc_server(getIp(myStatus.getAddress()), getPort(myStatus.getAddress()));
 
-    if(!known_node.empty()) {
-        
-    }
-
+    discoverNodes.syncNodes(known_node_address);
 
     return 0;
 }

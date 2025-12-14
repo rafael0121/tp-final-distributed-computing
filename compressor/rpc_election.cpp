@@ -130,13 +130,13 @@ void RingNodeServiceImpl::forwardElection(int origin, int current_best_id, int c
         std::unique_ptr<ring::RingNode::Stub> stub = ring::RingNode::NewStub(channel);
 
         ring::ElectionMsg msg;
+        grpc::ClientContext context;
+        ring::Ack reply;
+
         msg.set_origin_id(origin);
         msg.set_best_energy(current_best_energy);
         msg.set_best_energy(current_best_id);
         msg.set_best_address(current_best_address);
-
-        grpc::ClientContext context;
-        ring::Ack reply;
 
         grpc::Status status = stub->ReceiveElection(&context, msg, &reply);
 

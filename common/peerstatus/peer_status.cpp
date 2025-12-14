@@ -69,11 +69,6 @@ void PeerStatus::setCoordinator(Peer newCoordinator){
     KnownNodes
 */
 
-void PeerStatus::addKnownNodes(Peer node){
-    std::lock_guard<std::mutex> guard(list);
-    knownNodes.push_back(node);
-}
-
 void PeerStatus::removeKnownNodes(Peer node){
     std::lock_guard<std::mutex> guard(list);
     int node_id = node.id;
@@ -136,11 +131,11 @@ void PeerStatus::updateKnownSensors(const std::list<Peer>& sensors){
     for(const auto& sensor : sensors) {
         // Search for existing sensor with same id.
         auto it = std::find_if(knownNodes.begin(), knownNodes.end(),
-                                [sensor](const Peer& s){
-                                    return s.id == sensor.id;
+                                [sensor, this](const Peer& s){
+                                    return (s.id == sensor.id || s.id == this->id);
                                 });
-        // New node.
         if(it == knownNodes.end()) {
+            // Not found the new node in the known nodes list.
             knownNodes.push_back(sensor);
         }
     }

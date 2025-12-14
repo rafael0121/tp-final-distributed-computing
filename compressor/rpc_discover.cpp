@@ -1,6 +1,9 @@
 #include "rpc_discover.hpp"
 #include <peer_status.hpp>
 
+// GRPC
+#include <grpcpp/grpcpp.h>
+
 // Protocols
 #include <discoverNodes.grpc.pb.h>
 #include <discoverNodes.pb.h>
@@ -9,7 +12,7 @@ extern PeerStatus myStatus;
 
 DiscoveryServiceImpl::DiscoveryServiceImpl(){}
 
-grpc::Status DiscoveryServiceImpl::Hello(
+grpc::Status DiscoveryServiceImpl::hello(
     grpc::ServerContext* context, 
     const disc::HelloRequest* request,
     disc::HelloReply* reply
@@ -33,4 +36,43 @@ grpc::Status DiscoveryServiceImpl::Hello(
     }
 
     return grpc::Status::OK;
+}
+
+void DiscoveryServiceImpl::syncNodes(std::string dest_address){
+    int myId = myStatus.getId();
+    std::list<Peer> nodes;
+    std::list<Peer> sensors;
+
+    // RPC.
+    disc::HelloRequest request;
+    grpc::ClientContext context;
+    disc::HelloReply reply;
+
+
+    // Create channel to the successor.
+    auto channel = grpc::CreateChannel(dest_address, grpc::InsecureChannelCredentials());
+    std::unique_ptr<disc::DiscoveryService::Stub> stub 
+                    = disc::DiscoveryService::NewStub(channel);
+
+    request.set_sender_id(myId);
+
+    grpc::Status status = stub->Hello(&context, request, &reply);
+
+    if(status.ok()){
+        Peer dest_node = {reply.id(), dest_address};
+        nodes.push_back(dest_node);
+
+        for(const auto& s : reply.sensors()){
+            Peer sensor = {s.peer_id(), s.peer_ip()};
+            sensors.push_back(sensor);
+        }
+
+        for(const auto& n : reply.nodes()){
+            Peer node = {n.peer_id(), n.peer_ip()};
+            nodes.push_back(node);
+        }
+
+        myStatus.updateKnownNodes(nodes);
+        myStatus.updateKnownSensors(nodes);
+    }
 }

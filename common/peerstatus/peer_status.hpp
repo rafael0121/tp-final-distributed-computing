@@ -14,7 +14,6 @@ public:
     static PeerStatus& getInstance();
 
     // KnownNodes
-    void addKnownNodes(Peer node);
     void removeKnownNodes(Peer node);
     void updateKnownNodes(const std::list<Peer>& nodes);
     std::list<Peer> copyKnownNodes();
