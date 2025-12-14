@@ -11,6 +11,7 @@
 #include "rpc_election.hpp"
 
 #include <lamport.hpp>
+#include <logger.hpp>
 
 #include <peer_status.hpp>
 
