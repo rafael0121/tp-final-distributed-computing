@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <string>
 #include <random>
+#include <iostream>
 
 std::mutex builder;
 std::mutex list;
@@ -143,4 +144,33 @@ void PeerStatus::updateKnownSensors(const std::list<Peer>& sensors){
 
 std::list<Peer> PeerStatus::copyKnownSensors(){
     return knownSensors;
+}
+
+/*
+    LOGs
+*/
+
+void PeerStatus::printStatus(){
+    std::lock_guard<std::mutex> guard(list);
+    std::cout 
+    << std::endl
+    << "===================================================================" << std::endl
+    << "                    Id: " << id << std::endl
+    << "               Address: " << address << std::endl
+    << " Coordinator<id, addr>: " << coordinator.id << ", "<< coordinator.address << std::endl
+    << "          Energy Level: " << energy_level << std::endl
+    << "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||" << std::endl
+    << " Known Nodes: " << std::endl;
+    for(const auto& node : knownNodes){
+        std::cout << node.id << ", " << node.address  << std::endl;
+    }
+    std::cout 
+    << "-------------------------------------------------------------------" << std::endl
+    << " Known sensors: " << std::endl;
+    for(const auto& sensor : knownSensors){
+        std::cout << sensor.id << ", " << sensor.address  << std::endl;
+    }
+    std::cout 
+    << "###################################################################" << std::endl
+    << std::endl;
 }

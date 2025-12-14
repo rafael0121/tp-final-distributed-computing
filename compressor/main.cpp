@@ -1,5 +1,6 @@
 // STD
 #include <iostream>
+#include <thread>
 
 // GRPC
 #include <grpcpp/server_builder.h>
@@ -21,7 +22,7 @@ DiscoveryServiceImpl discoverNodes;
 // Initialize node.
 PeerStatus myStatus = PeerStatus::getInstance();
 
-void start_rpc_server(std::string address, int port){
+void start_rpc_server(std::string address){
     grpc::ServerBuilder builder;
     builder.AddListeningPort(address, grpc::InsecureServerCredentials());
     builder.RegisterService(&ringNode);
@@ -73,17 +74,42 @@ int getPort(const std::string& addr) {
     return std::stoi(addr.substr(pos + 1));
 }
 
+// Thread
+void printStatus(){
+    while(true){
+        sleep(5);
+        myStatus.printStatus();
+    }
+}
+
+void mainBehavior(){
+    if(!known_node_address.empty())
+        discoverNodes.syncNodes(known_node_address);
+}
+
 int main(int argc, char *argv[]){
     if(!parse_args(argc, argv)){
         std::cerr << "Address not informed: use --adress <ip:port>";
+        return -1;
     }
 
-    start_rpc_server(getIp(myStatus.getAddress()), getPort(myStatus.getAddress()));
+    std::string myAddr =  myStatus.getAddress();
 
-    discoverNodes.syncNodes(known_node_address);
+    /*
+        Initialize threads.
+    */ 
 
-    if(myStatus.copyKnownNodes().empty()){
-    };
+    // Print status thread.
+    std::thread t_prints(printStatus);
+    t_prints.detach();
+
+    // Main Node thread
+    std::thread t_main(mainBehavior);
+    t_main.detach();
+
+    // Server thread.
+    std::thread t_server(start_rpc_server, myAddr);
+    t_server.join();
 
     return 0;
 }

@@ -36,6 +36,9 @@ public:
     Peer getCoordinator();
     void setCoordinator(Peer newCoordinator);
 
+    // lOGS
+    void printStatus();
+
 private:
     int id;
     std::string address;

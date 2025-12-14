@@ -52,7 +52,6 @@ void DiscoveryServiceImpl::syncNodes(std::string dest_address){
     // Leader node.
     Peer leader_node;
 
-
     // Nodes and sensors synced.
     std::list<Peer> nodes;
     std::list<Peer> sensors;
