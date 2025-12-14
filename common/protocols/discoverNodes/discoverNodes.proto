@@ -7,6 +7,7 @@ service DiscoveryService {
 
 message HelloRequest {
   int32 sender_id = 1;
+  string sender_address = 2;
 }
 
 message Peer {

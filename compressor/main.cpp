@@ -78,14 +78,35 @@ int getPort(const std::string& addr) {
 // Thread
 void printStatus(){
     while(true){
-        sleep(60);
+        sleep(30);
         myStatus.printStatus();
     }
 }
 
 void mainBehavior(){
-    if(!known_node_address.empty())
-        discoverNodes.syncNodes(known_node_address);
+    // The first things to do.
+    if(!known_node_address.empty()){
+        if(!discoverNodes.syncNodes(known_node_address)){
+            LOG_ERRO("Known node isn't alive");
+            exit(-1);
+        }
+    } else {
+        // Set me as the coordinator.
+        myStatus.setCoordinator({myStatus.getId(), myStatus.getAddress()});
+    }
+
+    while(true){
+
+        // Check if i am the coordinator.
+        if(myStatus.getCoordinator().id == myStatus.getId()){
+            LOG_INFO("The coordinator is me.");
+            sleep(30);
+        } else {
+            LOG_INFO("The coordinator is ", myStatus.getCoordinator().id);
+            discoverNodes.syncNodes(known_node_address);
+            sleep(30);
+        }
+    }
 }
 
 int main(int argc, char *argv[]){

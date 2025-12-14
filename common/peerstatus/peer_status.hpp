@@ -14,12 +14,13 @@ public:
     static PeerStatus& getInstance();
 
     // KnownNodes
+    void addKnownNode(Peer node);
     void removeKnownNodes(Peer node);
     void updateKnownNodes(const std::list<Peer>& nodes);
     std::list<Peer> copyKnownNodes();
 
     // KnownSensors
-    void addKnownSensors(Peer sensors);
+    void addKnownSensor(Peer sensor);
     void removeKnownSensors(Peer sensors);
     void updateKnownSensors(const std::list<Peer>& sensors);
     std::list<Peer> copyKnownSensors();

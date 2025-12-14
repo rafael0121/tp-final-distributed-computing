@@ -19,7 +19,7 @@ public:
         disc::HelloReply* reply
     );
 
-    void syncNodes(std::string dest_address);
+    bool syncNodes(std::string dest_address);
 };
 
 #endif

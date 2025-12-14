@@ -19,15 +19,16 @@ grpc::Status DiscoveryServiceImpl::Hello(
     const disc::HelloRequest* request,
     disc::HelloReply* reply
 ){
+    LOG_DBUG("Hello called...");
     // Sender informations
     int sender_id = request->sender_id();
-    std::string sender_address = Utils::removeIPv4Prefix(context->peer()) ;
+    std::string sender_address = request->sender_address();
 
     int myId = myStatus.getId();
 
     // Add the sender to known nodes
     Peer sender_node = {sender_id, sender_address};
-    myStatus.addKnownSensors(sender_node);
+    myStatus.addKnownNode(sender_node);
 
     LOG_DBUG("Requested sync by ", sender_address);
 
@@ -59,10 +60,11 @@ grpc::Status DiscoveryServiceImpl::Hello(
     return grpc::Status::OK;
 }
 
-void DiscoveryServiceImpl::syncNodes(std::string dest_address){
+bool DiscoveryServiceImpl::syncNodes(std::string dest_address){
     LOG_DBUG("Start syncNodes");
 
     int myId = myStatus.getId();
+    std::string myAddress = myStatus.getAddress();
 
     // Leader node.
     Peer leader_node;
@@ -77,6 +79,7 @@ void DiscoveryServiceImpl::syncNodes(std::string dest_address){
     disc::HelloReply reply;
 
     request.set_sender_id(myId);
+    request.set_sender_address(myAddress);
 
     // Create channel to the successor.
     LOG_DBUG("Sync with ", dest_address, "...");
@@ -105,11 +108,15 @@ void DiscoveryServiceImpl::syncNodes(std::string dest_address){
         leader_node.id = reply.leader_id();
         leader_node.address = reply.leader_address();
 
+        myStatus.setCoordinator(leader_node);
+
         myStatus.updateKnownNodes(nodes);
-        myStatus.updateKnownSensors(nodes);
+        myStatus.updateKnownSensors(sensors);
 
         LOG_DBUG("Nodes synced");
+        return true;
     } else {
         LOG_ERRO("Hello reply: ", status.error_message());
+        return false;
     }
 }
