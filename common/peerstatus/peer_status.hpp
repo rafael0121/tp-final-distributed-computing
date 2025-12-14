@@ -4,6 +4,8 @@
 #include<list>
 #include<string>
 
+#include <lamport.hpp>
+
 struct Peer {
     int id;
     std::string address;

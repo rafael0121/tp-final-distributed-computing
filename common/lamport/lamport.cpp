@@ -2,6 +2,7 @@
 
 // Constructor.
 Lamport::Lamport(): _curTimestamp(1) {}
+std::mutex mt_curTimestamp;
 
 int64_t Lamport::updateTimestamp() {
     int32_t return_timestamp;

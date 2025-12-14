@@ -17,7 +17,6 @@ public:
 
 private:
     int _curTimestamp;
-    std::mutex mt_curTimestamp;
 };
 
 #endif // LAMPORT_H
