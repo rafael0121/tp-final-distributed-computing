@@ -1,13 +1,5 @@
-#
-# Sources
-#
-set(SOURCES
-    logger.cpp
-)
-
-# Create a static library from source files
-add_library(logger STATIC ${SOURCES})
+add_library(logger INTERFACE)
 
 # Optionally specify include directories
-target_include_directories(logger PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(logger INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 
