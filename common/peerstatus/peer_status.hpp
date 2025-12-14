@@ -31,6 +31,7 @@ public:
 
     // Set address.
     void setAddress(std::string new_address);
+
     // Coordinator
     Peer getCoordinator();
     void setCoordinator(Peer newCoordinator);

@@ -82,5 +82,8 @@ int main(int argc, char *argv[]){
 
     discoverNodes.syncNodes(known_node_address);
 
+    if(myStatus.copyKnownNodes().empty()){
+    };
+
     return 0;
 }

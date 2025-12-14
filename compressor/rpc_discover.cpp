@@ -17,11 +17,19 @@ grpc::Status DiscoveryServiceImpl::hello(
     const disc::HelloRequest* request,
     disc::HelloReply* reply
 ){
+    int myId = myStatus.getId();
+
+    // Nodes and sensors to send.
     std::list<Peer> nodes = myStatus.copyKnownNodes();
     std::list<Peer> sensors = myStatus.copyKnownSensors();
 
-    reply->set_energy(myStatus.getEnergyLevel());
-    reply->set_id(myStatus.getId());
+    // Leader node.
+    Peer leader = myStatus.getCoordinator();
+
+
+    reply->set_node_id(myId);
+    reply->set_leader_address(leader.address);
+    reply->set_leader_id(leader.id);
 
     for (const auto& n : nodes) {
         disc::Peer* newNode = reply->add_nodes();
@@ -40,6 +48,12 @@ grpc::Status DiscoveryServiceImpl::hello(
 
 void DiscoveryServiceImpl::syncNodes(std::string dest_address){
     int myId = myStatus.getId();
+
+    // Leader node.
+    Peer leader_node;
+
+
+    // Nodes and sensors synced.
     std::list<Peer> nodes;
     std::list<Peer> sensors;
 
@@ -59,7 +73,7 @@ void DiscoveryServiceImpl::syncNodes(std::string dest_address){
     grpc::Status status = stub->Hello(&context, request, &reply);
 
     if(status.ok()){
-        Peer dest_node = {reply.id(), dest_address};
+        Peer dest_node = {reply.node_id(), dest_address};
         nodes.push_back(dest_node);
 
         for(const auto& s : reply.sensors()){
@@ -71,6 +85,9 @@ void DiscoveryServiceImpl::syncNodes(std::string dest_address){
             Peer node = {n.peer_id(), n.peer_ip()};
             nodes.push_back(node);
         }
+        
+        leader_node.id = reply.leader_id();
+        leader_node.address = reply.leader_address();
 
         myStatus.updateKnownNodes(nodes);
         myStatus.updateKnownSensors(nodes);

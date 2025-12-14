@@ -15,8 +15,9 @@ message Peer {
 }
 
 message HelloReply {
-  int32 id = 1;
-  int32 energy = 2;
-  repeated Peer nodes = 3;
-  repeated Peer sensors = 4;
+  int32 node_id = 1;
+  int32 leader_id = 2;
+  string leader_address = 3;
+  repeated Peer nodes = 4;
+  repeated Peer sensors = 5;
 }
