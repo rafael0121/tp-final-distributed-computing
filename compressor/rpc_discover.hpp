@@ -18,8 +18,6 @@ public:
 private:
     int node_id;
     int energy_level;
-
-    void RunServer(std::string addr, std::string id, int energy);
 };
 
 #endif

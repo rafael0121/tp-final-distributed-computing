@@ -42,14 +42,6 @@ grpc::Status RingNodeServiceImpl::ReceiveCoordinator(grpc::ServerContext* ctx, c
     return grpc::Status::OK;
 }
 
-void RingNodeServiceImpl::startServer(const std::string& listen_addr) {
-    grpc::ServerBuilder builder;
-    builder.AddListeningPort(listen_addr, grpc::InsecureServerCredentials());
-    builder.RegisterService(this);
-    std::unique_ptr<grpc::Server> server(builder.BuildAndStart());
-    server->Wait();
-}
-
 /*
 #################################################################
 # Private

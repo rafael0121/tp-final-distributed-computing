@@ -19,12 +19,3 @@ grpc::Status DiscoveryServiceImpl::Hello(
     reply->set_energy(energy_level);
     return grpc::Status::OK;
 }
-
-void RunServer(std::string addr, int id, int energy) {
-    DiscoveryServiceImpl service(id, energy);
-    grpc::ServerBuilder builder;
-    builder.AddListeningPort(addr, grpc::InsecureServerCredentials());
-    builder.RegisterService(&service);
-    std::unique_ptr<grpc::Server> server(builder.BuildAndStart());
-    server->Wait();
-}

@@ -156,6 +156,19 @@ ringElection/fast:
 .PHONY : ringElection/fast
 
 #=============================================================================
+# Target rules for targets named compressorNode
+
+# Build rule for target.
+compressorNode: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compressorNode
+.PHONY : compressorNode
+
+# fast build rule for target.
+compressorNode/fast:
+	$(MAKE) $(MAKESILENT) -f common/protocols/compressorNode/CMakeFiles/compressorNode.dir/build.make common/protocols/compressorNode/CMakeFiles/compressorNode.dir/build
+.PHONY : compressorNode/fast
+
+#=============================================================================
 # Target rules for targets named compressor
 
 # Build rule for target.
@@ -190,6 +203,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... compressor"
+	@echo "... compressorNode"
 	@echo "... discoverNodes"
 	@echo "... lamport"
 	@echo "... ringElection"

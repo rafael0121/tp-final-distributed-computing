@@ -12,6 +12,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.1.1/CMakeSystem.cmake"
   "/home/rafael/MEGA/Projects/tp-final-distributed-computing/common/lamport/CMakeLists.txt"
   "/home/rafael/MEGA/Projects/tp-final-distributed-computing/common/protocols/CMakeLists.txt"
+  "/home/rafael/MEGA/Projects/tp-final-distributed-computing/common/protocols/compressorNode/CMakeLists.txt"
   "/home/rafael/MEGA/Projects/tp-final-distributed-computing/common/protocols/discoverNodes/CMakeLists.txt"
   "/home/rafael/MEGA/Projects/tp-final-distributed-computing/common/protocols/ringElection/CMakeLists.txt"
   "/home/rafael/MEGA/Projects/tp-final-distributed-computing/compressor/CMakeLists.txt"
@@ -91,6 +92,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "common/protocols/CMakeFiles/CMakeDirectoryInformation.cmake"
   "common/protocols/discoverNodes/CMakeFiles/CMakeDirectoryInformation.cmake"
   "common/protocols/ringElection/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "common/protocols/compressorNode/CMakeFiles/CMakeDirectoryInformation.cmake"
   "compressor/CMakeFiles/CMakeDirectoryInformation.cmake"
   "sensor/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
@@ -100,6 +102,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "common/lamport/CMakeFiles/lamport.dir/DependInfo.cmake"
   "common/protocols/discoverNodes/CMakeFiles/discoverNodes.dir/DependInfo.cmake"
   "common/protocols/ringElection/CMakeFiles/ringElection.dir/DependInfo.cmake"
+  "common/protocols/compressorNode/CMakeFiles/compressorNode.dir/DependInfo.cmake"
   "compressor/CMakeFiles/compressor.dir/DependInfo.cmake"
   "sensor/CMakeFiles/sensor.dir/DependInfo.cmake"
   )
