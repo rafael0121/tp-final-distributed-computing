@@ -9,7 +9,14 @@ message HelloRequest {
   int32 sender_id = 1;
 }
 
+message Peer {
+  int32 peer_id = 1;
+  string peer_ip = 2;
+}
+
 message HelloReply {
-  int32 node_id = 1;
-  double energy = 2;
+  int32 id = 1;
+  int32 energy = 2;
+  repeated Peer nodes = 3;
+  repeated Peer sensors = 4;
 }

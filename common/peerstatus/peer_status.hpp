@@ -11,15 +11,23 @@ struct Peer {
 
 class NodeStatus {
 public:
-    static NodeStatus& getInstance(int id, int energy);
+    static NodeStatus& getInstance();
 
+    // KnownNodes
     void addKnownNodes(Peer node);
     void removeKnownNodes(Peer node);
-    void updateKnownNodes(std::list<Peer> nodes);
+    void updateKnownNodes(const std::list<Peer>& nodes);
+    std::list<Peer> copyKnownNodes();
 
+    // KnownSensors
     void addKnownSensors(Peer sensors);
     void removeKnownSensors(Peer sensors);
     void updateKnownSensors(const std::list<Peer>& sensors);
+    std::list<Peer> copyKnownSensors();
+
+    // Get Values
+    int getEnergyLevel();
+    int getId();
 
 private:
     const int id;
@@ -28,7 +36,7 @@ private:
     std::list<Peer> knownNodes;
     std::list<Peer> knownSensors;
 
-    NodeStatus(int id, int energy);
+    NodeStatus();
 };
 
 #endif

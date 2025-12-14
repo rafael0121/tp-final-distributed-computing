@@ -8,12 +8,20 @@
 std::mutex builder;
 std::mutex list;
 
-NodeStatus& NodeStatus::getInstance(int id, int energy){
+NodeStatus& NodeStatus::getInstance(){
     std::lock_guard<std::mutex> guard(builder);
 
-    static NodeStatus nodeStatus = NodeStatus(id, energy);
+    static NodeStatus nodeStatus = NodeStatus();
 
     return nodeStatus;
+}
+
+int NodeStatus::getEnergyLevel(){
+    return energy_level;
+}
+
+int NodeStatus::getId(){
+    return id;
 }
 
 /*
@@ -38,19 +46,25 @@ void NodeStatus::removeKnownNodes(Peer node){
     }
 }
 
-void NodeStatus::updateKnownSensors(const std::list<Peer>& sensors){
+void NodeStatus::updateKnownNodes(const std::list<Peer>& nodes){
     std::lock_guard<std::mutex> guard(list);
 
-    for(const auto& sensor : sensors) {
+    for(const auto& node : nodes) {
         // Search for existing node with same id.
         auto it = std::find_if(knownNodes.begin(), knownNodes.end(),
-                                [sensor](const Peer& s){
-                                    return s.id == sensor.id;
+                                [node](const Peer& n){
+                                    return n.id == node.id;
                                 });
+
+        // New node.
         if(it == knownNodes.end()) {
-            knownNodes.push_back(sensor);
+            knownNodes.push_back(node);
         }
     }
+}
+
+std::list<Peer> NodeStatus::copyKnownNodes(){
+    return knownNodes;
 }
 
 /*
@@ -79,13 +93,18 @@ void NodeStatus::updateKnownSensors(const std::list<Peer>& sensors){
     std::lock_guard<std::mutex> guard(list);
 
     for(const auto& sensor : sensors) {
-        // Search for existing node with same id.
+        // Search for existing sensor with same id.
         auto it = std::find_if(knownNodes.begin(), knownNodes.end(),
                                 [sensor](const Peer& s){
                                     return s.id == sensor.id;
                                 });
+        // New node.
         if(it == knownNodes.end()) {
             knownNodes.push_back(sensor);
         }
     }
+}
+
+std::list<Peer> NodeStatus::copyKnownSensors(){
+    return knownSensors;
 }

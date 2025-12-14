@@ -1,18 +1,35 @@
 #include "rpc_discover.hpp"
+#include <peer_status.hpp>
 
 // Protocols
 #include <discoverNodes.grpc.pb.h>
 #include <discoverNodes.pb.h>
 
-DiscoveryServiceImpl::DiscoveryServiceImpl(int id, int energy)
-    : node_id(id), energy_level(energy) {}
+NodeStatus myStatus = NodeStatus::getInstance();
 
 grpc::Status DiscoveryServiceImpl::Hello(
     grpc::ServerContext* context, 
     const disc::HelloRequest* request,
     disc::HelloReply* reply
 ){
-    reply->set_node_id(node_id);
-    reply->set_energy(energy_level);
+    std::list<Peer> nodes = myStatus.copyKnownNodes();
+    std::list<Peer> sensors = myStatus.copyKnownSensors();
+
+    reply->set_energy(myStatus.getEnergyLevel());
+    reply->set_id(myStatus.getId());
+
+    for (const auto& n : nodes) {
+        disc::Peer* newNode = reply->add_nodes();
+        newNode->set_peer_id(n.id);
+        newNode->set_peer_ip(n.ip);
+    }
+
+    // add sensors
+    for (const auto& s : sensors) {
+        disc::Peer* newSensor = reply->add_sensors();
+        newSensor->set_peer_id(s.id);
+        newSensor->set_peer_ip(s.ip);
+    }
+
     return grpc::Status::OK;
 }
