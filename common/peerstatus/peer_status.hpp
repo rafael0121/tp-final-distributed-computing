@@ -35,12 +35,20 @@ public:
     // Set address.
     void setAddress(std::string new_address);
 
+    // Set ElectionOrigin
+    void setElectionOrigin(bool set);
+
+    // Get ElectionOrigin
+    bool isElectionOrigin();
+
     // Coordinator
     Peer getCoordinator();
     void setCoordinator(Peer newCoordinator);
 
     // lOGS
     void printStatus();
+
+    Lamport logic_clock;
 
 private:
     int id;
@@ -50,6 +58,9 @@ private:
 
     // Coordinator
     Peer coordinator;
+
+    // Check if i am origin of a election.
+    bool ElectionOrigin;
 
     std::list<Peer> knownNodes;
     std::list<Peer> knownSensors;

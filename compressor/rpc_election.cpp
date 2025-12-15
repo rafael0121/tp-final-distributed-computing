@@ -35,8 +35,11 @@ std::string getIpPort(std::string peer){
 */
 
 grpc::Status RingNodeServiceImpl::ReceiveElection(grpc::ServerContext* ctx, const ring::ElectionMsg* req, ring::Ack* resp) {
-    LOG_DBUG("Receiving election...");
+    LOG_DBUG("Receiving election...", " from ", ctx->peer());
 
+    int sender_clock = req->lamport_timestamp();
+
+    // Update my timeStamp
     int best_energy = -1;
     int best_id = -1;
     std::string best_address;
@@ -46,7 +49,7 @@ grpc::Status RingNodeServiceImpl::ReceiveElection(grpc::ServerContext* ctx, cons
         best_energy = req->best_energy();
         best_id = req->best_id();
         best_address = req->best_address();
-    } else if (best_energy == myStatus.getEnergyLevel()){
+    } else if (req->best_energy() == myStatus.getEnergyLevel()){
         // Req energy is equal my.
         if(req->best_id() > myStatus.getId()){
             // Req id is bigger than my.
@@ -67,26 +70,42 @@ grpc::Status RingNodeServiceImpl::ReceiveElection(grpc::ServerContext* ctx, cons
     }
 
     if (req->origin_id() == myStatus.getId()) {
-        // Election Completed announce coordinator
-        sendCoordinator(best_id, best_address);
+        // Check if i stopped my election.
+        if(myStatus.isElectionOrigin()){
+            myStatus.setCoordinator({best_id, best_address});
+            myStatus.setElectionOrigin(false); // Stop my election;
+
+            // Election Completed announce coordinator
+            sendCoordinator(best_id, best_address);
+        } else {
+            LOG_INFO("Not set coordinator because i stopped my election");
+        }
     } else {
-        // Forward to successor
-        forwardElection(req->origin_id(), best_id, best_energy, best_address);
+        if(!myStatus.isElectionOrigin() || myStatus.getId() < req->best_id()){
+            myStatus.setElectionOrigin(false); // Ensure that i am not in a election.
+            // Forward to successor
+            forwardElection(req->origin_id(), best_id, best_energy, best_address);
+        }
     }
+
     resp->set_ok(true);
-        return grpc::Status::OK;
+    resp->set_lamport_timestamp(myStatus.logic_clock.curTimestamp());
+
+    return grpc::Status::OK;
 }
 
 grpc::Status RingNodeServiceImpl::ReceiveCoordinator(grpc::ServerContext* ctx, const ring::CoordinatorMsg* req, ring::Ack* resp) {
-    LOG_DBUG("Receiving new coordinator...");
+    LOG_DBUG("Receiving new coordinator ", req->leader_id());
 
     myStatus.setCoordinator({req->leader_id(), req->leader_address()});
+
     return grpc::Status::OK;
 }
 
 void RingNodeServiceImpl::callElection() {
     LOG_INFO("Calling new election!");
 
+    myStatus.setElectionOrigin(true); // I initiate a election.
     int origin = myStatus.getId();
     int current_best_id = myStatus.getId();
     int current_best_energy = myStatus.getEnergyLevel();
@@ -153,13 +172,13 @@ void RingNodeServiceImpl::forwardElection(int origin, int current_best_id, int c
 
         msg.set_origin_id(origin);
         msg.set_best_energy(current_best_energy);
-        msg.set_best_energy(current_best_id);
+        msg.set_best_id(current_best_id);
         msg.set_best_address(current_best_address);
 
         grpc::Status status = stub->ReceiveElection(&context, msg, &reply);
 
-        if (status.ok() && reply.ok()) {
-            LOG_DBUG("Succesful to forward election to successor ", successor.id);
+        if (status.ok()) {
+            LOG_DBUG("Succesful to forward election to successor ", successor.id, " best_id ", current_best_id, " origin_id ", origin);
             return;
         } else {
             LOG_DBUG("Failed to forward election to successor ", successor.id, " ", status.error_message());
@@ -168,6 +187,7 @@ void RingNodeServiceImpl::forwardElection(int origin, int current_best_id, int c
             if(successor.id == origin) {
                 sendCoordinator(current_best_id, current_best_address);
                 myStatus.setCoordinator({current_best_id, current_best_address});
+                myStatus.setElectionOrigin(false);
             }
 
             // Remove failed node.
@@ -196,7 +216,7 @@ void RingNodeServiceImpl::sendCoordinator(int leader_id, std::string leader_addr
 
         grpc::Status status = stub->ReceiveCoordinator(&context, msg, &reply);
 
-        if (status.ok() && reply.ok()) {
+        if (status.ok()) {
             LOG_DBUG("Succesful to notifie new coordinator to node ", node.id);
             return;
         } else {

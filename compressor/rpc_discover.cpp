@@ -20,6 +20,11 @@ grpc::Status DiscoveryServiceImpl::Hello(
     disc::HelloReply* reply
 ){
     LOG_DBUG("Hello called...");
+
+    int sender_clock = request->lamport_timestamp();
+    // Update my timeStamp
+    myStatus.logic_clock.updateTimestamp(sender_clock);
+
     // Sender informations
     int sender_id = request->sender_id();
     std::string sender_address = request->sender_address();
@@ -43,6 +48,7 @@ grpc::Status DiscoveryServiceImpl::Hello(
     reply->set_node_id(myId);
     reply->set_leader_address(leader.address);
     reply->set_leader_id(leader.id);
+    reply->set_lamport_timestamp(myStatus.logic_clock.curTimestamp());
 
     for (const auto& n : nodes) {
         disc::Peer* newNode = reply->add_nodes();
@@ -113,10 +119,13 @@ bool DiscoveryServiceImpl::syncNodes(std::string dest_address){
         myStatus.updateKnownNodes(nodes);
         myStatus.updateKnownSensors(sensors);
 
+        myStatus.logic_clock.updateTimestamp(reply.lamport_timestamp());
+
         LOG_DBUG("Nodes synced");
         return true;
     } else {
         LOG_ERRO("Hello reply: ", status.error_message());
+
         return false;
     }
 }

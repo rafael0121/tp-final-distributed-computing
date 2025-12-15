@@ -8,6 +8,7 @@ service DiscoveryService {
 message HelloRequest {
   int32 sender_id = 1;
   string sender_address = 2;
+  int64 lamport_timestamp = 3;
 }
 
 message Peer {
@@ -21,4 +22,5 @@ message HelloReply {
   string leader_address = 3;
   repeated Peer nodes = 4;
   repeated Peer sensors = 5;
+  int64 lamport_timestamp = 6;
 }

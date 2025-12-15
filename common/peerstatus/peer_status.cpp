@@ -183,3 +183,11 @@ void PeerStatus::printStatus(){
     << "###################################################################" << std::endl
     << std::endl;
 }
+
+void PeerStatus::setElectionOrigin(bool set) {
+    ElectionOrigin = set;
+}
+
+bool PeerStatus::isElectionOrigin() {
+    return ElectionOrigin;
+}

@@ -11,11 +11,16 @@ message ElectionMsg {
   int32 best_energy = 2;
   int32 best_id = 3;
   string best_address = 4;
+  int64 lamport_timestamp = 5;
 }
 
 message CoordinatorMsg {
   int32 leader_id = 1;
   string leader_address = 2;
+  int64 lamport_timestamp = 3;
 }
 
-message Ack { bool ok = 1; }
+message Ack { 
+  bool ok = 1;  
+  int64 lamport_timestamp = 2;
+};

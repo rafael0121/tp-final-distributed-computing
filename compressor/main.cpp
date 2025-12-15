@@ -102,13 +102,14 @@ void mainBehavior(){
             LOG_INFO("The coordinator is me.");
             sleep(30);
         } else {
-            LOG_INFO("The coordinator is ", myStatus.getCoordinator().id);
             // Sync with the coordinator.
             if(!discoverNodes.syncNodes(myStatus.getCoordinator().address)){
+                // If sync failed is because coordinator is dead.
+                myStatus.removeKnownNodes(myStatus.getCoordinator());
                 ringNode.callElection();
                 sleep(30); // Election timeout
             };
-            sleep(30);
+            sleep(5);// sync time.
         }
     }
 }
