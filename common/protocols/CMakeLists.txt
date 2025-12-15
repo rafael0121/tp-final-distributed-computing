@@ -1,3 +1,2 @@
 add_subdirectory(discoverNodes)
 add_subdirectory(ringElection)
-add_subdirectory(compressorNode)

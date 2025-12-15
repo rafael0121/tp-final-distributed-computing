@@ -6,7 +6,6 @@
 #include <grpcpp/server_builder.h>
 
 // RPC Servies
-#include "rpc_compressor.hpp"
 #include "rpc_discover.hpp"
 #include "rpc_election.hpp"
 
@@ -17,7 +16,6 @@
 
 // Services
 RingNodeServiceImpl ringNode;
-CompressorNodeImpl compressNode;
 DiscoveryServiceImpl discoverNodes;
 
 // Initialize node.
@@ -27,7 +25,6 @@ void start_rpc_server(std::string address){
     grpc::ServerBuilder builder;
     builder.AddListeningPort(address, grpc::InsecureServerCredentials());
     builder.RegisterService(&ringNode);
-    builder.RegisterService(&compressNode);
     builder.RegisterService(&discoverNodes);
     std::unique_ptr<grpc::Server> server(builder.BuildAndStart());
     server->Wait();
