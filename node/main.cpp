@@ -33,6 +33,7 @@ void start_rpc_server(std::string address){
 // --knownnode
 std::string known_node_address;
 
+// Parse function
 int parse_args(int argc, char *argv[]){
     bool check_address_arg = false;
 
@@ -54,24 +55,6 @@ int parse_args(int argc, char *argv[]){
     return check_address_arg;
 }
 
-// Extract IP part
-std::string getIp(const std::string& addr) {
-    auto pos = addr.find_last_of(':');
-    if (pos == std::string::npos) {
-        throw std::invalid_argument("Invalid address format, expected ip:port");
-    }
-    return addr.substr(0, pos);
-}
-
-// Extract Port part
-int getPort(const std::string& addr) {
-    auto pos = addr.find_last_of(':');
-    if (pos == std::string::npos) {
-        throw std::invalid_argument("Invalid address format, expected ip:port");
-    }
-    return std::stoi(addr.substr(pos + 1));
-}
-
 // Thread
 void printStatus(){
     while(true){
@@ -80,6 +63,7 @@ void printStatus(){
     }
 }
 
+// Thread
 void mainBehavior(){
     // The first things to do.
     if(!known_node_address.empty()){
